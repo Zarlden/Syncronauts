@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpjrn8odcywhc"]
 
-[ext_resource type="Script" path="res://PlayerGravity.gd" id="1_xs2yv"]
+[ext_resource type="Script" path="res://PlayerGravity.gd" id="1_38pr2"]
 
 [sub_resource type="Gradient" id="Gradient_i0rxj"]
 
@@ -22,10 +22,11 @@ gradient = SubResource("Gradient_3o5nv")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(198, 160)
-script = ExtResource("1_xs2yv")
+script = ExtResource("1_38pr2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(0.359375, 0.359375)
+position = Vector2(0.249999, -8.25524e-06)
+scale = Vector2(0.335937, 0.34375)
 texture = SubResource("GradientTexture2D_si7yr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
