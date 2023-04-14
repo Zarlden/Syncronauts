@@ -1,20 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbhn42i8i11kj"]
+[gd_scene load_steps=8 format=3 uid="uid://ch6pmxvx21fnd"]
 
-[ext_resource type="PackedScene" uid="uid://bkikn3flelvmw" path="res://platform/platform.tscn" id="1_e1m3q"]
+[ext_resource type="Script" path="res://platform/movingPlatform.gd" id="1_uj803"]
+[ext_resource type="PackedScene" uid="uid://bkikn3flelvmw" path="res://platform/platform.tscn" id="2_goems"]
 
 [sub_resource type="Curve2D" id="Curve2D_6ey4e"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12, 16.5642, -1.61277, 171.453, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 158, 0, 2.08165e-12, 2.08165e-12, 16.5642, -1.61277, 171.453, 0)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="Animation" id="Animation_pioeg"]
 length = 0.001
 
+[sub_resource type="Animation" id="Animation_cisoa"]
+resource_name = "leftToRight"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="Animation" id="Animation_wq5dr"]
 resource_name = "slideToSlide"
 length = 5.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,18 +47,18 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukfyn"]
 _data = {
 "RESET": SubResource("Animation_pioeg"),
+"leftToRight": SubResource("Animation_cisoa"),
 "slideToSlide": SubResource("Animation_wq5dr")
 }
 
-[node name="platformMove" type="Path2D"]
-position = Vector2(-6.38198, 0.00022459)
-scale = Vector2(1.13734, 0.999998)
+[node name="Moving Platform" type="Path2D"]
 curve = SubResource("Curve2D_6ey4e")
+script = ExtResource("1_uj803")
 
-[node name="AnimatableBody2D" parent="." instance=ExtResource("1_e1m3q")]
+[node name="Platform" parent="." instance=ExtResource("2_goems")]
+position = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "slideToSlide"
 playback_process_mode = 0
 libraries = {
 "": SubResource("AnimationLibrary_ukfyn")
@@ -53,4 +69,4 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
-remote_path = NodePath("../../AnimatableBody2D")
+remote_path = NodePath("../../Platform")
