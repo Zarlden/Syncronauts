@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Interactable_Objects/Barrier/Barrier.gd" id="1_al2qm"]
 [ext_resource type="Script" path="res://BarrierShape.gd" id="1_memli"]
-[ext_resource type="Texture2D" uid="uid://hlvq7i7w5444" path="res://Interactable_Objects/Barrier/BlueBarrier.png" id="2_28pb2"]
+[ext_resource type="Texture2D" uid="uid://cguxkoiaptl4i" path="res://Interactable_Objects/Barrier/BlueBarrier.png" id="2_28pb2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2j20"]
 animations = [{
@@ -16,10 +16,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3g72"]
-size = Vector2(26, 47)
+size = Vector2(14.5, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ug2b"]
-size = Vector2(47, 47)
+size = Vector2(21, 35)
 
 [node name="Barrier" type="Area2D"]
 script = ExtResource("1_al2qm")
@@ -28,17 +28,17 @@ script = ExtResource("1_al2qm")
 script = ExtResource("1_memli")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BarrierShape"]
-position = Vector2(2, 2)
-scale = Vector2(0.63, 0.53)
+position = Vector2(1, 2)
+scale = Vector2(0.774688, 0.85125)
 sprite_frames = SubResource("SpriteFrames_j2j20")
 animation = &"Blue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierShape"]
-position = Vector2(-1, 0.5)
+position = Vector2(-1.25, -0.5)
 shape = SubResource("RectangleShape2D_x3g72")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 0.5)
+position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_2ug2b")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

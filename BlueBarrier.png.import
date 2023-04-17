@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cguxkoiaptl4i"
-path="res://.godot/imported/BlueBarrier.png-cf280cdaaeef361b9d2eb269219f7219.ctex"
+uid="uid://b35gcm8n6ffbk"
+path="res://.godot/imported/BlueBarrier.png-66638b7453d2f924669c084d126b435d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interactable_Objects/Barrier/BlueBarrier.png"
-dest_files=["res://.godot/imported/BlueBarrier.png-cf280cdaaeef361b9d2eb269219f7219.ctex"]
+source_file="res://BlueBarrier.png"
+dest_files=["res://.godot/imported/BlueBarrier.png-66638b7453d2f924669c084d126b435d.ctex"]
 
 [params]
 
