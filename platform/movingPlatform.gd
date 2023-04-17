@@ -4,7 +4,7 @@ extends Path2D
 @onready var platform = $Platform
 
 var moving = false
-var requirement_to_move = 1 #number of players required to move
+var requirement_to_move = 2 #number of players required to move
 var label = null
 
 # Called when the node enters the scene tree for the first time.
