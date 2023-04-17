@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfnesaa4lnec4"]
+[gd_scene load_steps=6 format=3 uid="uid://dwwn8qgk5yjti"]
 
 [ext_resource type="Script" path="res://puddle.gd" id="1_nibik"]
+[ext_resource type="PackedScene" path="res://colour_node.tscn" id="2_2ebt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h2jp"]
 
@@ -22,5 +23,7 @@ metadata/_edit_group_ = true
 scale = Vector2(0.304688, 0.304688)
 texture = SubResource("GradientTexture2D_tka27")
 metadata/_edit_group_ = true
+
+[node name="ColourNode" parent="." instance=ExtResource("2_2ebt8")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,23 +1,8 @@
 extends Node2D
 
-enum colour {
-	RED,
-	GREEN,
-	BLUE,
-	YELLOW
-}
+const colourNode = preload("res://ColourNode.gd")
 
-@export var puddleColour: colour = colour.RED
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
+@export var puddleColour: colourNode.colourSet = colourNode.colourSet.RED
 
 func _on_body_entered(body):
 	if body is Player:
