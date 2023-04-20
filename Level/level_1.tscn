@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tx2b8op8wdw5" path="res://Level/level_boundary.tscn" id="7_frwn5"]
 [ext_resource type="PackedScene" uid="uid://bqtpmqybxghfy" path="res://Interactable_Objects/checkpoint.tscn" id="7_o57h3"]
 [ext_resource type="PackedScene" uid="uid://ch6pmxvx21fnd" path="res://platform/movingPlatform.tscn" id="7_srvaw"]
+[ext_resource type="PackedScene" uid="uid://kg1u26jurwmi" path="res://Interactable_Objects/pressure_plate.tscn" id="8_3y1xg"]
 [ext_resource type="PackedScene" uid="uid://pouw3u2i4c6d" path="res://Interactable_Objects/goal.tscn" id="8_4cfu4"]
 [ext_resource type="PackedScene" uid="uid://bsiws3mb0k8nt" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="8_wep5m"]
 
@@ -487,6 +488,3 @@ position = Vector2(-105, 153)
 
 [node name="Moving Platform" parent="." index="8" instance=ExtResource("7_srvaw")]
 position = Vector2(550.618, 25.0002)
-
-[node name="Barrier" parent="." index="9" instance=ExtResource("8_wep5m")]
-position = Vector2(38, 0)

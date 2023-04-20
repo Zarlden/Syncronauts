@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs4cc0e4rcwft"]
+
+[ext_resource type="Script" path="res://test_platform.gd" id="1_buyl1"]
+
+[sub_resource type="Gradient" id="Gradient_csc1d"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bpb3e"]
+gradient = SubResource("Gradient_csc1d")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xykht"]
+size = Vector2(64, 64)
+
+[sub_resource type="Curve2D" id="Curve2D_fdlqx"]
+
+[node name="Platform" type="AnimatableBody2D"]
+position = Vector2(3, 1)
+script = ExtResource("1_buyl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_bpb3e")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xykht")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fdlqx")

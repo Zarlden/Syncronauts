@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 class_name Player
 
 const SPEED = 200.0
@@ -12,7 +11,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animate_sprite = $AnimatedSprite2D
 @onready var player_transform = $RemoteTransform2D
 
+func _ready():
+	colour = $ColourNode.colour
+	print(colour)
+
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor(): 
 		velocity.y += gravity * delta

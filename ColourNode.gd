@@ -6,3 +6,4 @@ enum colourSet {
 	BLUE,
 	YELLOW
 }
+@export var colour = colourSet.RED
