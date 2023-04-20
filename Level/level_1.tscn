@@ -460,9 +460,9 @@ sources/0 = SubResource("TileSetAtlasSource_vhq63")
 [node name="Level_1" instance=ExtResource("1_tu8dm")]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
-offset_left = -601.0
+offset_left = -600.0
 offset_top = -385.0
-offset_right = 1536.0
+offset_right = 1537.0
 offset_bottom = 312.0
 texture = ExtResource("1_4rjkc")
 stretch_mode = 1
