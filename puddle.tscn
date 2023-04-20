@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://lqq8pxbc51lr"]
 
 [ext_resource type="Script" path="res://puddle.gd" id="1_nibik"]
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="2_2ebt8"]
