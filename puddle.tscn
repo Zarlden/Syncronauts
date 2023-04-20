@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwwn8qgk5yjti"]
+
+[ext_resource type="Script" path="res://puddle.gd" id="1_nibik"]
+[ext_resource type="PackedScene" path="res://colour_node.tscn" id="2_2ebt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h2jp"]
+
+[sub_resource type="Gradient" id="Gradient_al5pl"]
+offsets = PackedFloat32Array(0.0193548, 0.716129, 0.983871)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0.565789, 0.565789, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tka27"]
+gradient = SubResource("Gradient_al5pl")
+
+[node name="Puddle" type="Area2D"]
+script = ExtResource("1_nibik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7h2jp")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.304688, 0.304688)
+texture = SubResource("GradientTexture2D_tka27")
+metadata/_edit_group_ = true
+
+[node name="ColourNode" parent="." instance=ExtResource("2_2ebt8")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
