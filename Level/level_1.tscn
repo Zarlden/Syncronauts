@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dixv3mg3pm52i"]
+[gd_scene load_steps=10 format=3 uid="uid://dixv3mg3pm52i"]
 
 [ext_resource type="Texture2D" uid="uid://ck3pw7mtlywca" path="res://Free/Background/Blue.png" id="1_4rjkc"]
 [ext_resource type="Texture2D" uid="uid://bj3tp8xabl3jr" path="res://Free/Terrain/Terrain (16x16).png" id="1_7l7et"]
@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tx2b8op8wdw5" path="res://Level/level_boundary.tscn" id="7_frwn5"]
 [ext_resource type="PackedScene" uid="uid://bqtpmqybxghfy" path="res://Interactable_Objects/checkpoint.tscn" id="7_o57h3"]
 [ext_resource type="PackedScene" uid="uid://ch6pmxvx21fnd" path="res://platform/movingPlatform.tscn" id="7_srvaw"]
-[ext_resource type="PackedScene" uid="uid://kg1u26jurwmi" path="res://Interactable_Objects/pressure_plate.tscn" id="8_3y1xg"]
 [ext_resource type="PackedScene" uid="uid://pouw3u2i4c6d" path="res://Interactable_Objects/goal.tscn" id="8_4cfu4"]
-[ext_resource type="PackedScene" uid="uid://bsiws3mb0k8nt" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="8_wep5m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vhq63"]
 texture = ExtResource("1_7l7et")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://doha7wh6blv3e"]
 
 [ext_resource type="Script" path="res://Interactable_Objects/Barrier/Barrier.gd" id="1_al2qm"]
-[ext_resource type="Texture2D" uid="uid://cguxkoiaptl4i" path="res://Interactable_Objects/Barrier/BlueBarrier.png" id="2_28pb2"]
+[ext_resource type="Texture2D" uid="uid://b35gcm8n6ffbk" path="res://Interactable_Objects/Barrier/BlueBarrier.png" id="2_28pb2"]
 [ext_resource type="Script" path="res://Interactable_Objects/Barrier/BarrierShape.gd" id="2_wyold"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2j20"]
