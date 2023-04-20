@@ -6,5 +6,5 @@ const colourNode = preload("res://ColourNode.gd")
 
 func _on_body_entered(body):
 	if body is Player:
-		if body.playerColour != puddleColour:
+		if body.colour != puddleColour:
 			body.player_died()
