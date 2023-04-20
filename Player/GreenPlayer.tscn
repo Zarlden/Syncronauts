@@ -197,6 +197,3 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_nmwg8")
 animation = &"run"
 frame_progress = 0.0
-
-[node name="ColourNode" parent="." index="3"]
-colour = 1

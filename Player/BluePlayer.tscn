@@ -6,6 +6,3 @@
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 frame_progress = 0.0
-
-[node name="ColourNode" parent="." index="3"]
-colour = 2
