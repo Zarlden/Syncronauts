@@ -3,7 +3,7 @@ class_name Player
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -225.0
-const colourNode = preload("res://misc/ColourNode.gd")
+const colourNode = preload("res://ColourNode.gd")
 var colour = colourNode.colourSet.BLUE
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

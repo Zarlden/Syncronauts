@@ -1,6 +1,6 @@
 extends Node2D
 
-const colourNode = preload("res://misc/ColourNode.gd")
+const colourNode = preload("res://ColourNode.gd")
 
 @export var puddleColour: colourNode.colourSet = colourNode.colourSet.RED
 

@@ -1,7 +1,7 @@
 extends StaticBody2D
 class_name  Barrier
 
-const colourNode = preload("res://misc/ColourNode.gd")
+const colourNode = preload("res://ColourNode.gd")
 const COLOR = colourNode.colourSet.BLUE
 
 func _ready():
