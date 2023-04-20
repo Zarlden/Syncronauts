@@ -12,10 +12,25 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var player_transform = $RemoteTransform2D
 
 func _ready():
+	
 	colour = $ColourNode.colour
-	print(colour)
+	#print(colour)
+	
+	$Networking/MultiplayerSynchronizer.set_multiplayer_authority(name.to_int())
+	$Camera2D.current = is_local_authority()
+	
+	
+	
 
 func _physics_process(delta):
+	
+	if not is_local_authority():
+		if not $Networking.is_processed:
+			position = $Networking.sync_position
+			$Networking.is_processed = true
+		velocity = $Networking.sync_velocity
+		move_and_slide()
+		return
 	
 	# Add the gravity.
 	if not is_on_floor(): 
@@ -44,6 +59,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide();
+	$Networking.sync_position = position
+	$Networking.sync_velocity = velocity
+	$Networking.is_processed = false
 	
 func player_died():
 	Events.emit_signal("player_dead")
@@ -52,3 +70,7 @@ func player_died():
 func connect_camera(camera):
 	var camera_path = camera.get_path()
 	player_transform.remote_path = camera_path
+
+func is_local_authority():
+	return $Networking/MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()
+
