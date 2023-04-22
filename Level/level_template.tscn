@@ -1,19 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4f3ftr2dct45"]
+[gd_scene load_steps=2 format=3 uid="uid://b4f3ftr2dct45"]
 
 [ext_resource type="Script" path="res://Level/World.gd" id="1_rekee"]
-[ext_resource type="PackedScene" uid="uid://bivkuhpy2ko1t" path="res://Player/player.tscn" id="2_b8bor"]
 
 [node name="Level_Template" type="Node2D"]
 script = ExtResource("1_rekee")
 
-[node name="Player" parent="." instance=ExtResource("2_b8bor")]
-position = Vector2(-2, -2)
-
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
 
-[node name="Players" type="Node2D" parent="."]
+[node name="SpawnPosition" type="Node2D" parent="."]
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Player/BluePlayer.tscn")
-spawn_path = NodePath("../Players")
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(588, 0)
+zoom = Vector2(0.3, 0.3)
