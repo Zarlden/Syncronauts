@@ -493,7 +493,3 @@ position = Vector2(550.618, 25.0002)
 
 [node name="Barrier" parent="." index="8" instance=ExtResource("8_wep5m")]
 position = Vector2(33, 0)
-
-[node name="Camera2D" type="Camera2D" parent="." index="9"]
-position = Vector2(588, 0)
-zoom = Vector2(0.3, 0.3)
