@@ -1,12 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://db6ik6psmw16n"]
+[gd_scene load_steps=5 format=3 uid="uid://db6ik6psmw16n"]
 
 [ext_resource type="Script" path="res://Interactable_Objects/portal/portal.gd" id="1_12ur0"]
 [ext_resource type="Texture2D" uid="uid://cujlprbr8j0tl" path="res://Interactable_Objects/portal/portal_blue.png" id="2_wf6l0"]
 [ext_resource type="Texture2D" uid="uid://gk6dlc3h18t5" path="res://Interactable_Objects/portal/portal_orange.png" id="3_frhki"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhfkp"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfj0y"]
+radius = 9.0
+height = 32.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_12ur0")
@@ -25,7 +25,8 @@ metadata/_edit_group_ = true
 [node name="Portal2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2"]
-shape = SubResource("CapsuleShape2D_pfj0y")
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_jhfkp")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Portal2"]
@@ -34,5 +35,6 @@ scale = Vector2(0.3925, 0.3925)
 texture = ExtResource("3_frhki")
 metadata/_edit_group_ = true
 
-[connection signal="body_entered" from="Portal1" to="." method="_on_portal_1_body_entered"]
-[connection signal="body_entered" from="Portal2" to="." method="_on_portal_2_body_entered"]
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

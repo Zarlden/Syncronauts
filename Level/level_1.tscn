@@ -459,7 +459,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vhq63")
 
 [node name="Level_1" instance=ExtResource("1_tu8dm")]
-position = Vector2(18, -7)
+position = Vector2(-38, -2)
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 offset_left = -600.0
@@ -494,12 +494,11 @@ position = Vector2(550.618, 25.0002)
 position = Vector2(33, 0)
 
 [node name="Node2D" parent="." index="10" instance=ExtResource("9_hkpsq")]
-position = Vector2(74, -29)
 
 [node name="Portal1" parent="Node2D" index="0"]
-position = Vector2(-123, 18)
+position = Vector2(178, -18)
 
 [node name="Portal2" parent="Node2D" index="1"]
-position = Vector2(78, -4)
+position = Vector2(134, -20)
 
 [editable path="Node2D"]
