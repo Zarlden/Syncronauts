@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -225.0
+const JUMP_VELOCITY = -275.0
 const colourNode = preload("res://ColourNode.gd")
 var colour = colourNode.colourSet.BLUE
 
@@ -17,12 +17,12 @@ func is_local_authority():
 func _ready():
 	colour = $ColourNode.colour
 	$Networking/MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
+	print(colour)
 	
 	if is_local_authority():
 		$Camera2D.make_current()
 
 func _physics_process(delta):
-	
 	if not is_local_authority():
 		if not $Networking.is_processed:
 			position = $Networking.sync_position
@@ -46,7 +46,6 @@ func _physics_process(delta):
 		
 		move_and_slide()
 		return
-	
 	# Add the gravity.
 	if not is_on_floor(): 
 		velocity.y += gravity * delta
