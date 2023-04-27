@@ -5,7 +5,6 @@ extends Node2D
 var p1_pos = null
 var p2_pos = null
 var portal_lock = false
-@onready var timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,20 +16,24 @@ func teleport(player, to):
 	if not portal_lock:
 		if not portal_lock:
 			player.set_position(to)
-		timer.start()
 		portal_lock = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if $Portal1.has_overlapping_bodies():
-		for node in $Portal1.get_overlapping_bodies():
-			if node is Player:
-				teleport(node, p2_pos)
-	elif $Portal2.has_overlapping_bodies():
-		for node in $Portal2.get_overlapping_bodies():
-			if node is Player:
-				teleport(node, p1_pos)
 
 
-func _on_timer_timeout():
+
+func _on_portal_1_body_entered(body):
+	if body is Player:
+		teleport(body, p2_pos)
+
+
+func _on_portal_1_body_exited(body):
+	portal_lock = false
+
+
+func _on_portal_2_body_entered(body):
+	if body is Player:
+		teleport(body, p2_pos)
+
+
+func _on_portal_2_body_exited(body):
 	portal_lock = false

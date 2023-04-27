@@ -35,6 +35,7 @@ scale = Vector2(0.3925, 0.3925)
 texture = ExtResource("3_frhki")
 metadata/_edit_group_ = true
 
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Portal1" to="." method="_on_portal_1_body_entered"]
+[connection signal="body_exited" from="Portal1" to="." method="_on_portal_1_body_exited"]
+[connection signal="body_entered" from="Portal2" to="." method="_on_portal_2_body_entered"]
+[connection signal="body_exited" from="Portal2" to="." method="_on_portal_2_body_exited"]
