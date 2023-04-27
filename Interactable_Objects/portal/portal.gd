@@ -2,7 +2,6 @@ extends Node2D
 
 # Check each portal body, if a player enters, set
 # their position to the other portal
-
 var p1_pos = null
 var p2_pos = null
 var portal_lock = false
@@ -12,7 +11,6 @@ var portal_lock = false
 func _ready():
 	p1_pos = $Portal1.get_position()
 	p2_pos = $Portal2.get_position()
-
 
 
 func teleport(player, to):
