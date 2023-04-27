@@ -32,7 +32,7 @@ func _on_portal_1_body_exited(body):
 
 func _on_portal_2_body_entered(body):
 	if body is Player:
-		teleport(body, p2_pos)
+		teleport(body, p1_pos)
 
 
 func _on_portal_2_body_exited(body):
