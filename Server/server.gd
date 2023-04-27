@@ -1,8 +1,13 @@
 extends Node2D
 
-const playerObj = preload("res://Player/player.tscn")
+const playerObjs = [preload("res://Player/BluePlayer.tscn"), preload("res://Player/RedPlayer.tscn"), 
+preload("res://Player/GreenPlayer.tscn"), preload("res://Player/YellowPlayer.tscn")]
 const level1 = preload("res://Level/level_1.tscn")
 @onready var level = $Level_1
+var players_connected = 0
+var next_character_spawn = 0
+var player_ids = {}
+
 
 func _enter_tree():
 	#Events.goal_reached.connect(level_transition)
@@ -30,14 +35,22 @@ func start_network(isServer):
 	multiplayer.set_multiplayer_peer(peer)	
 	
 func create_player(id):	
-	var player = playerObj.instantiate()
-	player.name = str(id)
-	player.position = level.respawn_location
-	$Players.add_child(player)
-	
-	print("Player with id " + player.name)
+	if players_connected <= 4:
+		var player = playerObjs[next_character_spawn].instantiate()
+		player.name = str(id)
+		player.position = level.respawn_location
+		$Players.add_child(player)
+		
+		player_ids[id] = next_character_spawn
+		next_character_spawn += 1
+		players_connected += 1
+
+		print("Player with id " + player.name)
 	
 func destroy_player(id):
+	next_character_spawn = player_ids[id]
+	player_ids.erase(id)
+	players_connected -= 1
 	$Players.get_node(str(id)).queue_free()
 
 func failed():

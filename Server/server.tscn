@@ -9,7 +9,7 @@ script = ExtResource("1_hmfu2")
 [node name="Level_1" parent="." instance=ExtResource("2_wcshx")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Player/player.tscn")
+_spawnable_scenes = PackedStringArray("res://Player/BluePlayer.tscn", "res://Player/GreenPlayer.tscn", "res://Player/RedPlayer.tscn", "res://Player/YellowPlayer.tscn")
 spawn_path = NodePath("../Players")
 
 [node name="Players" type="Node2D" parent="."]

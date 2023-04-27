@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Interactable_Objects/Barrier/Barrier.gd" id="1_al2qm"]
 [ext_resource type="Texture2D" uid="uid://b35gcm8n6ffbk" path="res://Interactable_Objects/Barrier/BlueBarrier.png" id="2_28pb2"]
-[ext_resource type="PackedScene" path="res://colour_node.tscn" id="4_y2g4e"]
+[ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="4_t1n8b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2j20"]
 animations = [{
@@ -40,4 +40,7 @@ shape = SubResource("RectangleShape2D_x3g72")
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_2ug2b")
 
-[node name="ColourNode" parent="." instance=ExtResource("4_y2g4e")]
+[node name="ColourNode" parent="." instance=ExtResource("4_t1n8b")]
+colour = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
