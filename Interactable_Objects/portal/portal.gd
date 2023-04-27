@@ -14,8 +14,7 @@ func _ready():
 
 func teleport(player, to):
 	if not portal_lock:
-		if not portal_lock:
-			player.set_position(to)
+		player.set_position(to)
 		portal_lock = true
 
 

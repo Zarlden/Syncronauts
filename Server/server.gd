@@ -32,7 +32,7 @@ func start_network(isServer):
 func create_player(id):	
 	var player = playerObj.instantiate()
 	player.name = str(id)
-	player.position = level.respawn_location
+	player.global_position = level.respawn_location
 	$Players.add_child(player)
 	
 	print("Player with id " + player.name)

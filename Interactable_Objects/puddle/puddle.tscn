@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="2_2ebt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h2jp"]
+size = Vector2(87.5456, 20)
 
 [sub_resource type="Gradient" id="Gradient_al5pl"]
 offsets = PackedFloat32Array(0.0193548, 0.716129, 0.983871)

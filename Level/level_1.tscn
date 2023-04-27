@@ -458,7 +458,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vhq63")
 
 [node name="Level_1" instance=ExtResource("1_tu8dm")]
-position = Vector2(-38, -2)
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 offset_left = -595.0
