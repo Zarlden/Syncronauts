@@ -8,7 +8,7 @@
 radius = 9.0
 height = 32.0
 
-[node name="Node2D" type="Node2D"]
+[node name="PortalPair" type="Node2D"]
 script = ExtResource("1_12ur0")
 
 [node name="Portal1" type="Area2D" parent="."]

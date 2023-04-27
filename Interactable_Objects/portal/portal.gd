@@ -10,10 +10,9 @@ var portal_lock = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
-
 	p1_pos = $Portal1.get_position()
 	p2_pos = $Portal2.get_position()
+
 
 
 func teleport(player, to):
