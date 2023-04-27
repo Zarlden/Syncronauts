@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6kic"]
 size = Vector2(148, 12)
 
+[sub_resource type="Animation" id="Animation_j0f4h"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_f14d0"]
 resource_name = "pressed"
 length = 0.1
@@ -45,9 +48,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [Rect2(0, 256, 256, 256)]
 }
-
-[sub_resource type="Animation" id="Animation_j0f4h"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d7uqm"]
 _data = {
