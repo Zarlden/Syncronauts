@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_6ey4e"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 158, 0, 2.08165e-12, 2.08165e-12, 16.5642, -1.61277, 171.453, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, -3, -136.338)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_pioeg"]
 length = 0.001

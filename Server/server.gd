@@ -2,7 +2,7 @@ extends Node2D
 
 const playerObj = preload("res://Player/player.tscn")
 const level1 = preload("res://Level/level_1.tscn")
-@onready var level = $Level_1
+@onready var level = $"Level 2"
 
 func _enter_tree():
 	#Events.goal_reached.connect(level_transition)

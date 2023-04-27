@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -225.0
+const JUMP_VELOCITY = -275.0
 const colourNode = preload("res://ColourNode.gd")
 var colour = colourNode.colourSet.BLUE
 
