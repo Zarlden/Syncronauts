@@ -1,30 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://doha7wh6blv3e"]
+[gd_scene load_steps=7 format=3 uid="uid://doha7wh6blv3e"]
 
 [ext_resource type="Script" path="res://Interactable_Objects/Barrier/Barrier.gd" id="1_al2qm"]
+[ext_resource type="Texture2D" uid="uid://b35gcm8n6ffbk" path="res://Interactable_Objects/Barrier/BlueBarrier.png" id="2_28pb2"]
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="4_y2g4e"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2j20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_28pb2")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3g72"]
-size = Vector2(18.25, 40)
+size = Vector2(14.5, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ug2b"]
-size = Vector2(25.5, 40)
+size = Vector2(21, 35)
 
-[node name="BarrierTemplate" type="Area2D"]
-collision_layer = 0
+[node name="Barrier" type="Area2D"]
 script = ExtResource("1_al2qm")
 
 [node name="BarrierShape" type="StaticBody2D" parent="."]
 
-[node name="BarrierCollision" type="CollisionShape2D" parent="BarrierShape"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BarrierShape"]
+position = Vector2(1, 2)
+scale = Vector2(0.774688, 0.85125)
+sprite_frames = SubResource("SpriteFrames_j2j20")
+animation = &"Blue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierShape"]
 position = Vector2(-1.25, -0.5)
 shape = SubResource("RectangleShape2D_x3g72")
 
-[node name="Sprite2D" type="Sprite2D" parent="BarrierShape"]
-
-[node name="AreaEnter" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_2ug2b")
 
 [node name="ColourNode" parent="." instance=ExtResource("4_y2g4e")]
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
