@@ -192,8 +192,12 @@ animations = [{
 }]
 
 [node name="RedPlayer" instance=ExtResource("1_6px7k")]
+collision_layer = 5
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_cipfj")
 animation = &"run"
 frame_progress = 0.0
+
+[node name="ColourNode" parent="." index="3"]
+colour = 1

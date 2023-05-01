@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://2tkt6w7i8l32"]
+
+[ext_resource type="PackedScene" uid="uid://doha7wh6blv3e" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="1_vuliq"]
+[ext_resource type="Texture2D" uid="uid://b5uhryscw6aw" path="res://Interactable_Objects/Barrier/RedBarrier.png" id="2_g1a55"]
+
+[node name="BarrierRed" instance=ExtResource("1_vuliq")]
+collision_layer = 4
+
+[node name="BarrierCollision" parent="BarrierShape" index="0"]
+position = Vector2(-1.25, -1)
+
+[node name="Sprite2D" parent="BarrierShape" index="1"]
+position = Vector2(2, 2)
+texture = ExtResource("2_g1a55")
+
+[node name="AreaEnter" parent="." index="1"]
+position = Vector2(-1, -1)
+
+[node name="ColourNode" parent="." index="2"]
+colour = 1

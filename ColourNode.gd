@@ -1,9 +1,9 @@
 extends Node
 
 enum colourSet {
+	BLUE,
 	RED,
 	GREEN,
-	BLUE,
 	YELLOW
 }
 @export var colour = colourSet.BLUE
