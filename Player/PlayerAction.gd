@@ -19,6 +19,8 @@ func _ready():
 	$Networking/MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	print(colour)
 	
+	player_died();
+	
 	if is_local_authority():
 		$Camera2D.make_current()
 

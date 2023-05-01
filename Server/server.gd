@@ -38,7 +38,6 @@ func create_player(id):
 	if players_connected <= 4:
 		var player = playerObjs[next_character_spawn].instantiate()
 		player.name = str(id)
-		player.position = level.respawn_location
 		$Players.add_child(player)
 		
 		player_ids[id] = next_character_spawn

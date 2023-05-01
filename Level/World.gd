@@ -9,7 +9,8 @@ func _ready():
 	Events.player_dead.connect(respawn)
 	Events.checkpoint_reached.connect(checkpoint)
 	#new_player.connect_camera(camera)
-	respawn_location = spawn.global_position
+	respawn_location = spawn.position
+	print(respawn_location)
 	
 func respawn(id):
 	var player = get_tree().get_root().get_node("Server").get_node("Players").get_node(str(id))
