@@ -21,5 +21,4 @@ func respawn():
 	
 func checkpoint(location):
 	respawn_location = location
-	
-	
+

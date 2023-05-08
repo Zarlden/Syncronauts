@@ -20,3 +20,12 @@ func _init_item_list():
 	for i in range(levels):
 		$LevelSelectList.add_item("Level %d" % (i + 1))
 		
+		
+# Check if the exit key is pressed then bring up the menu
+func _process(delta):
+	if Input.is_action_pressed("Exit"):
+		print("s")
+		var scene_trs = load("res://UI/main_menu.tscn")
+		var scene = scene_trs.instance()
+		add_child(scene)
+
