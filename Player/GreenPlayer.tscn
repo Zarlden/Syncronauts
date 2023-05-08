@@ -192,6 +192,7 @@ animations = [{
 }]
 
 [node name="GreenPlayer" instance=ExtResource("1_uy4de")]
+collision_layer = 9
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_nmwg8")
@@ -199,4 +200,4 @@ animation = &"run"
 frame_progress = 0.0
 
 [node name="ColourNode" parent="." index="3"]
-colour = 1
+colour = 2

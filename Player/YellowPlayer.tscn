@@ -192,6 +192,7 @@ animations = [{
 }]
 
 [node name="YellowPlayer" instance=ExtResource("1_yiw0k")]
+collision_layer = 17
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_he7xl")

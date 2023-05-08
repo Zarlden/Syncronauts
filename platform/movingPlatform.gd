@@ -9,7 +9,6 @@ var label = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(platform)
 	label = platform.get_node("Label")
 	label.text = str(requirement_to_move)
 	platform.get_node("Area2D").body_entered.connect(onPlatformEntered)
@@ -30,7 +29,7 @@ func onPlatfromExit(body):
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if requirement_to_move <= 0 and not moving:
 		animation_player.play("leftToRight")
 		moving = true
