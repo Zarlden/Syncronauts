@@ -1,13 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch6pmxvx21fnd"]
+[gd_scene load_steps=7 format=3 uid="uid://ch6pmxvx21fnd"]
 
 [ext_resource type="Script" path="res://platform/movingPlatform.gd" id="1_uj803"]
 [ext_resource type="PackedScene" uid="uid://bkikn3flelvmw" path="res://platform/platform.tscn" id="2_goems"]
-
-[sub_resource type="Curve2D" id="Curve2D_6ey4e"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 158, 0, 2.08165e-12, 2.08165e-12, 16.5642, -1.61277, 171.453, 0)
-}
-point_count = 3
 
 [sub_resource type="Animation" id="Animation_pioeg"]
 length = 0.001
@@ -52,7 +46,6 @@ _data = {
 }
 
 [node name="Moving Platform" type="Path2D"]
-curve = SubResource("Curve2D_6ey4e")
 script = ExtResource("1_uj803")
 
 [node name="Platform" parent="." instance=ExtResource("2_goems")]
@@ -70,3 +63,5 @@ rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../Platform")
+
+[editable path="Platform"]

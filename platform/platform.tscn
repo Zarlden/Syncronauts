@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkikn3flelvmw"]
+[gd_scene load_steps=6 format=3 uid="uid://bkikn3flelvmw"]
 
 [ext_resource type="Texture2D" uid="uid://bj3tp8xabl3jr" path="res://Free/Terrain/Terrain (16x16).png" id="1_ufx11"]
 
@@ -12,6 +12,9 @@ size = Vector2(46, 2)
 line_spacing = 0.0
 font_size = 11
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5co72"]
+size = Vector2(46, 10)
+
 [node name="Platform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,9 +25,9 @@ region_rect = Rect2(192, 0, 48, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_77sx4")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Upper" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Upper"]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_mljl8")
 debug_color = Color(0.992157, 0, 0.254902, 0.419608)
@@ -38,3 +41,10 @@ text = "1"
 label_settings = SubResource("LabelSettings_y01ie")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Lower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lower"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_5co72")
+debug_color = Color(0.34902, 0.486275, 0.992157, 0.419608)

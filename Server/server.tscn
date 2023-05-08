@@ -6,10 +6,11 @@
 [node name="Server" type="Node2D"]
 script = ExtResource("1_akigo")
 
-[node name="Level_1" parent="." instance=ExtResource("2_wcshx")]
-
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Player/BluePlayer.tscn", "res://Player/GreenPlayer.tscn", "res://Player/RedPlayer.tscn", "res://Player/YellowPlayer.tscn")
 spawn_path = NodePath("../Players")
+
+[node name="Level 2" parent="." instance=ExtResource("2_dxvuq")]
+position = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Players" type="Node2D" parent="."]

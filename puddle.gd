@@ -9,5 +9,3 @@ func _on_body_entered(body):
 		if body.colour != puddleColour:
 			body.player_died()
 
-func _ready():
-	
