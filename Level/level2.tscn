@@ -505,7 +505,7 @@ sources/0 = SubResource("TileSetAtlasSource_eq5rv")
 
 [sub_resource type="Curve2D" id="Curve2D_g0ntl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, -2, 0, 0, 0, 0, -3, -111)
+"points": PackedVector2Array(0, 0, 0, 0, -1, -2, 0, 0, 0, 0, -155, -102)
 }
 point_count = 2
 
@@ -537,6 +537,7 @@ stretch_mode = 1
 [node name="Puddle" parent="." index="2" instance=ExtResource("5_r4nlo")]
 position = Vector2(271, 490)
 scale = Vector2(12, 0.5)
+puddleColour = 0
 
 [node name="BarrierRed" parent="." index="3" instance=ExtResource("10_i15u2")]
 position = Vector2(-112, 680)
@@ -673,7 +674,7 @@ rotation = 4.71239
 scale = Vector2(3, 3)
 
 [node name="Spikes17" parent="." index="36" instance=ExtResource("14_aj7ww")]
-position = Vector2(120, -92)
+position = Vector2(-61, -95)
 rotation = 1.5708
 scale = Vector2(3, 3)
 
@@ -682,25 +683,25 @@ position = Vector2(180, -13)
 curve = SubResource("Curve2D_g0ntl")
 
 [node name="Platform" parent="Moving Platform" index="0"]
-position = Vector2(-3, -111)
+position = Vector2(-1, -2)
 
 [node name="PathFollow2D" parent="Moving Platform" index="2"]
-position = Vector2(-3, -111)
-progress = 109.018
+position = Vector2(-1, -2)
 
 [node name="Moving Platform2" parent="." index="38" instance=ExtResource("4_e76f8")]
 position = Vector2(-221, 198)
 curve = SubResource("Curve2D_0vp2t")
 
 [node name="Platform" parent="Moving Platform2" index="0"]
-position = Vector2(4, -293)
+position = Vector2(2, 2)
 
 [node name="PathFollow2D" parent="Moving Platform2" index="2"]
-position = Vector2(4, -293)
-progress = 295.007
+position = Vector2(2, 2)
 
 [editable path="PortalPair"]
 [editable path="PortalPair2"]
 [editable path="PortalPair3"]
 [editable path="Moving Platform"]
+[editable path="Moving Platform/Platform"]
 [editable path="Moving Platform2"]
+[editable path="Moving Platform2/Platform"]

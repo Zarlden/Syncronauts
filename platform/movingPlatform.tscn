@@ -63,3 +63,5 @@ rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../Platform")
+
+[editable path="Platform"]
