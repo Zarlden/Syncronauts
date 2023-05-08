@@ -2,7 +2,7 @@ extends Node2D
 
 const playerObj = preload("res://Player/player.tscn")
 const level1 = preload("res://Level/level_1.tscn")
-@onready var level = $Level_1
+@onready var level = $"Level 2"
 
 func _enter_tree():
 	#Events.goal_reached.connect(level_transition)
@@ -32,7 +32,7 @@ func start_network(isServer):
 func create_player(id):	
 	var player = playerObj.instantiate()
 	player.name = str(id)
-	player.position = level.respawn_location
+	player.global_position = level.respawn_location
 	$Players.add_child(player)
 	
 	print("Player with id " + player.name)

@@ -1,6 +1,7 @@
 extends AnimatableBody2D
 
 signal pressure_plate_pressed
+signal pressure_plate_unpressed
 
 @onready var animation_player = $AnimationPlayer
 var hasTriggered = false
