@@ -13,8 +13,5 @@ position = Vector2(-1, 0)
 position = Vector2(2, 3)
 texture = ExtResource("2_bqy33")
 
-[node name="AreaEnter" parent="." index="1"]
-position = Vector2(-1, 0)
-
 [node name="ColourNode" parent="." index="2"]
 colour = 3
