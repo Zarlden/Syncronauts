@@ -5,6 +5,8 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -225.0
 const colourNode = preload("res://ColourNode.gd")
 var colour = colourNode.colourSet.BLUE
+var weight = 1
+var starting_weight = weight
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -14,6 +16,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	colour = $ColourNode.colour
 	print(colour)
+
+
+	
 
 func _physics_process(delta):
 	
@@ -52,3 +57,12 @@ func player_died():
 func connect_camera(camera):
 	var camera_path = camera.get_path()
 	player_transform.remote_path = camera_path
+
+
+func _on_top_player_body_entered(body):
+	if body is Player and body != self:
+		weight += 1
+
+func _on_top_player_body_exited(body):
+	if body is Player and body != self:
+		weight -= 1

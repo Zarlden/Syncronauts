@@ -1,10 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://bivkuhpy2ko1t"]
+[gd_scene load_steps=32 format=3 uid="uid://bivkuhpy2ko1t"]
 
 [ext_resource type="Script" path="res://Player/PlayerAction.gd" id="1_gfmy5"]
 [ext_resource type="Texture2D" uid="uid://ba0gxox2wopob" path="res://Free/Main Characters/Virtual Guy/Idle (32x32).png" id="1_r5xou"]
 [ext_resource type="Texture2D" uid="uid://d1lxvycmvbbnr" path="res://Free/Main Characters/Virtual Guy/Jump (32x32).png" id="3_2o6qk"]
 [ext_resource type="Texture2D" uid="uid://bmlmlheg0qrll" path="res://Free/Main Characters/Virtual Guy/Run (32x32).png" id="4_vfwl2"]
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="5_bn6vg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flcmp"]
+size = Vector2(22, 3)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ve6l"]
 atlas = ExtResource("1_r5xou")
@@ -194,6 +197,10 @@ size = Vector2(22, 24)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gfmy5")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_flcmp")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_rfu0w")
@@ -208,3 +215,12 @@ shape = SubResource("RectangleShape2D_7blhu")
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [node name="ColourNode" parent="." instance=ExtResource("5_bn6vg")]
+
+[node name="TopPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPlayer"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_flcmp")
+
+[connection signal="body_entered" from="TopPlayer" to="." method="_on_top_player_body_entered"]
+[connection signal="body_exited" from="TopPlayer" to="." method="_on_top_player_body_exited"]
