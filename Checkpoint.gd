@@ -10,7 +10,7 @@ func _ready():
 	
 
 func _on_body_entered(body):
-	if not triggered:
+	if not triggered && multiplayer.is_server():
 		if body is Player:
 			sprite.play("Reached")
 			if multiplayer.is_server():
@@ -20,9 +20,11 @@ func _on_body_entered(body):
 			triggered = true
 			await sprite.animation_finished
 			sprite.play("Reached_Idle")
+			$Network.checkpoint_animation_state = $AnimatedSprite2D.animation
+			
 
 
 func _on_multiplayer_synchronizer_synchronized():
-	if !multiplayer.is_server():
+	if !multiplayer.is_server() and $AnimatedSprite2D.animation != $Network.checkpoint_animation_state:
 		print("Set Client Checkpoint State to " + $Network.checkpoint_animation_state)
 		$AnimatedSprite2D.play($Network.checkpoint_animation_state)
