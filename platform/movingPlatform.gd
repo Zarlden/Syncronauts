@@ -4,7 +4,7 @@ extends Path2D
 @onready var platform = $Platform
 
 var moving = false
-var requirement_to_move = 2 #number of players required to move
+var requirement_to_move = 3 #number of players required to move
 var required_weight = requirement_to_move
 var label = null
 
