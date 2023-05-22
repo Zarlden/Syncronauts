@@ -32,7 +32,7 @@ scale = Vector2(0.774688, 0.85125)
 sprite_frames = SubResource("SpriteFrames_j2j20")
 animation = &"Blue"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierShape"]
+[node name="BarrierCollision" type="CollisionShape2D" parent="BarrierShape"]
 position = Vector2(-1.25, -0.5)
 shape = SubResource("RectangleShape2D_x3g72")
 
