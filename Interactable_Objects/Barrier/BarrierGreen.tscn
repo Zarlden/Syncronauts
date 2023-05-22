@@ -6,15 +6,15 @@
 [node name="BarrierGreen" instance=ExtResource("1_6i21s")]
 collision_layer = 8
 
-[node name="Sprite2D" parent="BarrierShape" index="0"]
+[node name="BarrierCollision" parent="BarrierShape" index="0"]
+position = Vector2(0, 0)
+
+[node name="Sprite2D" parent="BarrierShape" index="1"]
 position = Vector2(3, 3)
 texture = ExtResource("2_u871f")
 
-[node name="CollisionShape2D" parent="BarrierShape" index="1"]
-position = Vector2(0, -1.79688)
-
-[node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -1.5)
+[node name="AreaEnter" parent="." index="1"]
+position = Vector2(0, 0)
 
 [node name="ColourNode" parent="." index="2"]
 colour = 2
