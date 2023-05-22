@@ -48,8 +48,10 @@ func create_player(id):
 	
 func destroy_player(id):
 	next_character_spawn = player_ids[id]
+	print("Player " + str(id) + " disconnected.")
 	player_ids.erase(id)
 	players_connected -= 1
+
 	$Players.get_node(str(id)).queue_free()
 
 func failed():

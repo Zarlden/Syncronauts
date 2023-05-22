@@ -20,7 +20,7 @@ func _ready():
 	print(colour)
 	
 	player_died();
-	
+		
 	if is_local_authority():
 		$Camera2D.make_current()
 
@@ -44,7 +44,7 @@ func _physics_process(delta):
 			if(velocity.x > 0):
 				animate_sprite.flip_h = false
 			else:
-				animate_sprite.flip_h = true	
+				animate_sprite.flip_h = true
 		
 		move_and_slide()
 		return
@@ -73,7 +73,7 @@ func _physics_process(delta):
 			animate_sprite.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide();
 	$Networking.sync_position = position
 	$Networking.sync_velocity = velocity
