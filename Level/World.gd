@@ -18,6 +18,14 @@ func respawn(id):
 func checkpoint(location):
 	respawn_location = location
 	
+	
+	
+func _process(delta):
+if Input.is_action_pressed("Exit"):
+	#if not shown then show pause menu
+	..show()
+	
+	
 
 	
 	
