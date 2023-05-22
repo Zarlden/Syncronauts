@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ceq0145hdfnwg"]
+[gd_scene load_steps=20 format=3 uid="uid://ceq0145hdfnwg"]
 
 [ext_resource type="PackedScene" uid="uid://b4f3ftr2dct45" path="res://Level/level_template.tscn" id="1_2brg6"]
 [ext_resource type="Texture2D" uid="uid://dqtxev8xuimd4" path="res://Free/Background/Yellow.png" id="2_lidii"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://pouw3u2i4c6d" path="res://Interactable_Objects/goal.tscn" id="12_txtkw"]
 [ext_resource type="PackedScene" uid="uid://duwsjr108qoi7" path="res://Interactable_Objects/spikes/spikes.tscn" id="14_aj7ww"]
 [ext_resource type="PackedScene" uid="uid://doha7wh6blv3e" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="15_jbdj5"]
+[ext_resource type="PackedScene" uid="uid://bxlqdtfthhrtj" path="res://Interactable_Objects/Barrier/BarrierBlue.tscn" id="15_myvin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq5rv"]
 texture = ExtResource("2_mmlyi")
@@ -633,16 +634,16 @@ rotation = 3.14159
 position = Vector2(21, 621)
 
 [node name="Barrier" parent="." index="25" instance=ExtResource("15_jbdj5")]
-position = Vector2(275, 191)
+position = Vector2(275, 178)
 
 [node name="Barrier2" parent="." index="26" instance=ExtResource("15_jbdj5")]
-position = Vector2(141, 191)
+position = Vector2(141, 178)
 
 [node name="Barrier3" parent="." index="27" instance=ExtResource("15_jbdj5")]
-position = Vector2(8, 191)
+position = Vector2(8, 178)
 
 [node name="Barrier4" parent="." index="28" instance=ExtResource("15_jbdj5")]
-position = Vector2(-125, 191)
+position = Vector2(-125, 178)
 
 [node name="Spikes10" parent="." index="29" instance=ExtResource("14_aj7ww")]
 position = Vector2(253, 192)
@@ -697,6 +698,9 @@ position = Vector2(2, 2)
 
 [node name="PathFollow2D" parent="Moving Platform2" index="2"]
 position = Vector2(2, 2)
+
+[node name="BarrierBlue" parent="." index="39" instance=ExtResource("15_myvin")]
+position = Vector2(47, 35)
 
 [editable path="PortalPair"]
 [editable path="PortalPair2"]

@@ -1,17 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxlqdtfthhrtj"]
+[gd_scene load_steps=2 format=3 uid="uid://bxlqdtfthhrtj"]
 
 [ext_resource type="PackedScene" uid="uid://doha7wh6blv3e" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="1_58p5d"]
-[ext_resource type="Texture2D" uid="uid://b35gcm8n6ffbk" path="res://Interactable_Objects/Barrier/BlueBarrier.png" id="2_2mcat"]
 
 [node name="BarrierBlue" instance=ExtResource("1_58p5d")]
 collision_layer = 2
 
-[node name="BarrierCollision" parent="BarrierShape" index="0"]
-position = Vector2(-0.125, 1)
-
-[node name="Sprite2D" parent="BarrierShape" index="1"]
+[node name="Sprite2D" parent="BarrierShape" index="0"]
 position = Vector2(3, 4)
-texture = ExtResource("2_2mcat")
 
-[node name="AreaEnter" parent="." index="1"]
-position = Vector2(0.25, 1)
+[node name="CollisionShape2D" parent="BarrierShape" index="1"]
+position = Vector2(0, -0.71875)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -1)

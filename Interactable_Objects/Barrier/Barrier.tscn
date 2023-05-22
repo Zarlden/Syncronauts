@@ -1,27 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://doha7wh6blv3e"]
+[gd_scene load_steps=6 format=3 uid="uid://doha7wh6blv3e"]
 
 [ext_resource type="Script" path="res://Interactable_Objects/Barrier/Barrier.gd" id="1_al2qm"]
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="4_y2g4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3g72"]
-size = Vector2(14.5, 60.5)
+size = Vector2(12, 59.5938)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ug2b"]
-size = Vector2(21, 61)
+size = Vector2(21, 63.5)
 
 [node name="Barrier" type="Area2D"]
 script = ExtResource("1_al2qm")
 
 [node name="BarrierShape" type="StaticBody2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="BarrierShape"]
+position = Vector2(3, 4.75)
+scale = Vector2(1, 1.50781)
+texture = ExtResource("2_28pb2")
+
 [node name="BarrierCollision" type="CollisionShape2D" parent="BarrierShape"]
-position = Vector2(-1.25, -0.5)
+position = Vector2(0, 0.125)
 shape = SubResource("RectangleShape2D_x3g72")
 
-[node name="Sprite2D" type="Sprite2D" parent="BarrierShape"]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_2ug2b")
 
 [node name="ColourNode" parent="." instance=ExtResource("4_y2g4e")]
