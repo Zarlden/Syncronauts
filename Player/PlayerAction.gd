@@ -5,6 +5,8 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -275.0
 const colourNode = preload("res://ColourNode.gd")
 var colour = colourNode.colourSet.BLUE
+var weight = 1
+var starting_weight = weight
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -23,6 +25,9 @@ func _ready():
 		
 	if is_local_authority():
 		$Camera2D.make_current()
+
+
+	
 
 func _physics_process(delta):
 	if not is_local_authority():
@@ -88,4 +93,31 @@ func connect_camera(camera):
 	player_transform.remote_path = camera_path
 
 
+func _on_top_player_body_entered(body):
+	if body is Player and body != self:
+		weight += 1
+		emit_signal("weight_updated")
+
+func _on_top_player_body_exited(body):
+	if body is Player and body != self:
+		weight -= 1
+		emit_signal("weight_updated")
+
+func _process(delta):
+	weight = update_weight()
+
+# Check the above player by calling their update weight function
+func update_weight(current_weight = 1):
+	var max_weight = current_weight
+
+	for body in $TopPlayer.get_overlapping_bodies():
+		if body == self:
+			continue
+
+		if body is Player:
+			var weight = body.update_weight(current_weight + 1)
+			if weight > max_weight:
+				max_weight = weight
+
+	return max_weight
 

@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="4_y2g4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3g72"]
-size = Vector2(14.5, 60.5)
+size = Vector2(14.5, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ug2b"]
-size = Vector2(21, 61)
+size = Vector2(21, 35)
 
 [node name="Barrier" type="Area2D"]
 script = ExtResource("1_al2qm")
