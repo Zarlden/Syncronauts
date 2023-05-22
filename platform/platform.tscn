@@ -9,6 +9,9 @@ size = Vector2(46, 2)
 line_spacing = 0.0
 font_size = 11
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5co72"]
+size = Vector2(46, 10)
+
 [node name="Platform" type="AnimatableBody2D"]
 
 [node name="PlayerDetectArea" type="Area2D" parent="."]

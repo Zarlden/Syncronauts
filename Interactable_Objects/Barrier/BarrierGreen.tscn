@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm1vqhx4x5k6o"]
+
+[ext_resource type="PackedScene" uid="uid://doha7wh6blv3e" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="1_6i21s"]
+[ext_resource type="Texture2D" uid="uid://cchkf08ev2krt" path="res://Interactable_Objects/Barrier/GreenBarrier.png" id="2_u871f"]
+
+[node name="BarrierGreen" instance=ExtResource("1_6i21s")]
+collision_layer = 8
+
+[node name="BarrierCollision" parent="BarrierShape" index="0"]
+position = Vector2(0, 0)
+
+[node name="Sprite2D" parent="BarrierShape" index="1"]
+position = Vector2(3, 3)
+texture = ExtResource("2_u871f")
+
+[node name="AreaEnter" parent="." index="1"]
+position = Vector2(0, 0)
+
+[node name="ColourNode" parent="." index="2"]
+colour = 2

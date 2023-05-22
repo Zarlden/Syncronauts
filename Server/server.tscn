@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1trjpf0s1q2j"]
+
+[ext_resource type="Script" path="res://Server/Server.gd" id="1_hmfu2"]
+[ext_resource type="PackedScene" uid="uid://ceq0145hdfnwg" path="res://Level/level2.tscn" id="2_dxvuq"]
+
+[node name="Server" type="Node2D"]
+script = ExtResource("1_hmfu2")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Player/player.tscn")
+spawn_path = NodePath("../Players")
+
+[node name="Level 2" parent="." instance=ExtResource("2_dxvuq")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Players" type="Node2D" parent="."]

@@ -7,10 +7,12 @@ var moving = false
 var requirement_to_move = 3 #number of players required to move
 var required_weight = requirement_to_move
 var label = null
+var temp = 0
+var bumped_players = 0
+var paused = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(platform)
 	label = platform.get_node("Label")
 	label.text = str(requirement_to_move)
 
