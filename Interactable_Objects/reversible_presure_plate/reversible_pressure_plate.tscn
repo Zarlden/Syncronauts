@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d327b3dimt4q0"]
+
+[ext_resource type="PackedScene" uid="uid://kg1u26jurwmi" path="res://Interactable_Objects/pressure_plate.tscn" id="1_gar7g"]
+[ext_resource type="Script" path="res://Interactable_Objects/reversible_presure_plate/reversible_pressure_plate.gd" id="2_2eat0"]
+
+[node name="Reversible Pressure Plate" instance=ExtResource("1_gar7g")]
+script = ExtResource("2_2eat0")
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(0, 256, 256, 256)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(84, 48, 84, 52, 92, 52, 96, 56, 100, 60, 104, 64, 104, 72, -92, 72, -92, 64, -88, 60, -84, 56, -80, 52, -72, 52, -72, 48)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(6, 51)
