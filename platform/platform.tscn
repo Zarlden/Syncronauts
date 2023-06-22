@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkikn3flelvmw"]
+[gd_scene load_steps=5 format=3 uid="uid://bkikn3flelvmw"]
 
+[ext_resource type="Script" path="res://platform/platform.gd" id="1_tj75h"]
 [ext_resource type="Texture2D" uid="uid://bj3tp8xabl3jr" path="res://Free/Terrain/Terrain (16x16).png" id="1_ufx11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77sx4"]
@@ -10,6 +11,7 @@ line_spacing = 0.0
 font_size = 11
 
 [node name="Platform" type="AnimatableBody2D"]
+script = ExtResource("1_tj75h")
 
 [node name="PlayerDetectArea" type="Area2D" parent="."]
 position = Vector2(3, -9)

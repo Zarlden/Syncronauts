@@ -8,6 +8,9 @@ var colour = colourNode.colourSet.BLUE
 var weight = 1
 var starting_weight = weight
 
+var player_on_top = false
+var should_check_weights = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animate_sprite = $AnimatedSprite2D
@@ -59,31 +62,43 @@ func connect_camera(camera):
 	player_transform.remote_path = camera_path
 
 
-func _on_top_player_body_entered(body):
-	if body is Player and body != self:
-		weight += 1
-		emit_signal("weight_updated")
+#func _on_top_player_body_entered(body):
+#	if body is Player and body != self:
+#		weight += 1
+#		emit_signal("weight_updated")
 
-func _on_top_player_body_exited(body):
-	if body is Player and body != self:
-		weight -= 1
-		emit_signal("weight_updated")
+#func _on_top_player_body_exited(body):
+#	if body is Player and body != self:
+#		weight -= 1
+#		emit_signal("weight_updated")
 
 func _process(delta):
-	weight = update_weight()
+	if should_check_weights:
+		var new_weight = update_weight()
+		if weight == new_weight:
+			return
+		else:
+			weight = new_weight
+	#for body in $BottomPlayer.get_overlapping_bodies():
+	#	if body is Platform:
+	#		print("Update")
+	#		weight = update_weight()
 
 # Check the above player by calling their update weight function
-func update_weight(current_weight = 1):
-	var max_weight = current_weight
-
+func update_weight():
 	for body in $TopPlayer.get_overlapping_bodies():
-		if body == self:
-			continue
+		if body is Player and body != self:
+			var top_weight = body.update_weight()
+			return top_weight + 1
+	return 1
 
-		if body is Player:
-			var weight = body.update_weight(current_weight + 1)
-			if weight > max_weight:
-				max_weight = weight
 
-	return max_weight
 
+func _on_bottom_player_body_entered(body):
+	if body is Platform:
+		should_check_weights = true
+
+
+func _on_bottom_player_body_exited(body):
+	if body is Platform:
+		should_check_weights = false

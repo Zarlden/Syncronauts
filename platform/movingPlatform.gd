@@ -1,4 +1,5 @@
 extends Path2D
+class_name MovingPlatform
 
 @onready var animation_player = $AnimationPlayer
 @onready var platform = $Platform
