@@ -11,6 +11,8 @@ var starting_weight = weight
 var player_on_top = false
 var should_check_weights = false
 
+var visited = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animate_sprite = $AnimatedSprite2D
@@ -79,6 +81,7 @@ func _process(delta):
 			return
 		else:
 			weight = new_weight
+	visited = false
 	#for body in $BottomPlayer.get_overlapping_bodies():
 	#	if body is Platform:
 	#		print("Update")
@@ -86,11 +89,15 @@ func _process(delta):
 
 # Check the above player by calling their update weight function
 func update_weight():
-	for body in $TopPlayer.get_overlapping_bodies():
-		if body is Player and body != self:
-			var top_weight = body.update_weight()
-			return top_weight + 1
-	return 1
+	visited = true
+	if $TopPlayer.has_overlapping_bodies():
+		var top_weight = 0
+		for body in $TopPlayer.get_overlapping_bodies():
+			if body is Player and body != self and not body.visited:
+				top_weight += body.update_weight()
+		return top_weight + 1
+	else:
+		return 1
 
 
 

@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bmlmlheg0qrll" path="res://Free/Main Characters/Virtual Guy/Run (32x32).png" id="4_vfwl2"]
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="5_bn6vg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l34lw"]
-size = Vector2(22, 1.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fxoa"]
+size = Vector2(22, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flcmp"]
+size = Vector2(22, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ve6l"]
 atlas = ExtResource("1_r5xou")
@@ -194,18 +197,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7blhu"]
 size = Vector2(22, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_flcmp"]
-size = Vector2(22, 3)
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gfmy5")
 
+[node name="BottomSeperator" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_3fxoa")
+
 [node name="BottomPlayer" type="Area2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 16.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPlayer"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_l34lw")
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_flcmp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
@@ -226,10 +230,6 @@ shape = SubResource("RectangleShape2D_7blhu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPlayer"]
 position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_flcmp")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_flcmp")
 
 [connection signal="body_entered" from="BottomPlayer" to="." method="_on_bottom_player_body_entered"]
