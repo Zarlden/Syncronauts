@@ -15,6 +15,7 @@ font_size = 11
 position = Vector2(3, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea"]
+visible = false
 position = Vector2(-3, -1)
 shape = SubResource("RectangleShape2D_77sx4")
 
@@ -34,5 +35,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_77sx4")

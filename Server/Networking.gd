@@ -11,3 +11,6 @@ var is_processed = false
 
 # Goal Sync
 var checkpoint_animation_state: String
+
+# World Sync
+var respawn_location: Vector2

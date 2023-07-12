@@ -19,16 +19,12 @@ func is_local_authority():
 func _ready():
 	colour = $ColourNode.colour
 	$Networking/MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
-	print(colour)
+	self.player_died()
 	
-	player_died();
-		
 	if is_local_authority():
 		$Camera2D.make_current()
-
-
+		
 	
-
 func _physics_process(delta):
 	if not is_local_authority():
 		if not $Networking.is_processed:
@@ -49,7 +45,7 @@ func _physics_process(delta):
 			if(velocity.x > 0):
 				animate_sprite.flip_h = false
 			else:
-				animate_sprite.flip_h = true
+				animate_sprite.flip_h = true	
 		
 		move_and_slide()
 		return
@@ -78,7 +74,7 @@ func _physics_process(delta):
 			animate_sprite.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+
 	move_and_slide();
 	$Networking.sync_position = position
 	$Networking.sync_velocity = velocity
@@ -104,9 +100,11 @@ func _on_top_player_body_exited(body):
 		emit_signal("weight_updated")
 
 func _process(delta):
-	weight = update_weight()
+	#weight = update_weight()
+	pass
 
 # Check the above player by calling their update weight function
+'''
 func update_weight(current_weight = 1):
 	var max_weight = current_weight
 
@@ -120,4 +118,4 @@ func update_weight(current_weight = 1):
 				max_weight = weight
 
 	return max_weight
-
+'''

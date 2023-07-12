@@ -57,6 +57,7 @@ script = ExtResource("1_uj803")
 
 [node name="Platform" parent="." instance=ExtResource("2_goems")]
 position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(1.2, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_process_mode = 0

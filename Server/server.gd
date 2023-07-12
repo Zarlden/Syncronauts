@@ -19,6 +19,7 @@ func _enter_tree():
 		
 func start_network(isServer):
 	var peer = ENetMultiplayerPeer.new()
+	
 	if isServer:
 		multiplayer.peer_connected.connect(self.create_player)
 		multiplayer.peer_disconnected.connect(self.destroy_player)
@@ -28,6 +29,7 @@ func start_network(isServer):
 	else:
 		multiplayer.connected_to_server.connect(self.success)
 		multiplayer.connection_failed.connect(self.failed)
+		multiplayer.peer_disconnected.connect(self.destroy_player)
 		
 		peer.create_client("localhost", 4242)
 		print("Client Connected")
