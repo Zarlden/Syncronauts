@@ -8,6 +8,7 @@ var sync_position: Vector2:
 var sync_velocity: Vector2
 var sync_direction: float
 var is_processed = false
+var player_animation: String
 
 # Goal Sync
 var checkpoint_animation_state: String

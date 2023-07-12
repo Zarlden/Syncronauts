@@ -4,27 +4,27 @@ extends Path2D
 @onready var platform = $Platform
 
 var moving = false
-@export var requirement_to_move = 2 #number of players required to move
-var required_weight = requirement_to_move
+@export var required_weight = 2
+var requirement_to_move = required_weight #number of players required to move
 var label = null
 var temp = 0
 var bumped_players = 0
 var paused = true
+var platformCounter = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label = platform.get_node("Label")
+	platform.get_node("PlayerDetectArea").body_entered.connect(enter_platform)
+	platform.get_node("PlayerDetectArea").body_exited.connect(exit_platform)
+	
 	label.text = str(requirement_to_move)
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var total_weights = 0
-	for body in $Platform/PlayerDetectArea.get_overlapping_bodies():
-		if body is Player:
-			total_weights += body.weight
-	requirement_to_move -= total_weights
+	var total_weights = abs(platformCounter) - 1 #-1 is no players, -2 is 1 player etc..
+	
+	requirement_to_move = max(requirement_to_move - total_weights, 0)
 	label.text = str(requirement_to_move)
 	if requirement_to_move <= 0 and not moving:
 		animation_player.play("leftToRight")
@@ -34,3 +34,15 @@ func _process(delta):
 		moving = false
 	requirement_to_move = required_weight
 
+func enter_platform(body):
+	if body is Player:
+		body.platform_ptr = self
+		platformCounter = max(platformCounter - 1, -5)
+		print("PF Counter Enter: " + str(platformCounter))
+		
+func exit_platform(body):
+	if body is Player:
+		body.platform_ptr = null
+		platformCounter = min(platformCounter + 1, -1)
+		print("PF Counter Exit: " + str(platformCounter))
+		
