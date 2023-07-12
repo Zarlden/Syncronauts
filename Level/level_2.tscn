@@ -682,6 +682,7 @@ curve = SubResource("Curve2D_g0ntl")
 
 [node name="Platform" parent="Moving Platform" index="0"]
 position = Vector2(-1, -2)
+scale = Vector2(1, 1)
 
 [node name="PathFollow2D" parent="Moving Platform" index="2"]
 position = Vector2(-1, -2)
@@ -692,6 +693,7 @@ curve = SubResource("Curve2D_0vp2t")
 
 [node name="Platform" parent="Moving Platform2" index="0"]
 position = Vector2(2, 2)
+scale = Vector2(1, 1)
 
 [node name="PathFollow2D" parent="Moving Platform2" index="2"]
 position = Vector2(2, 2)

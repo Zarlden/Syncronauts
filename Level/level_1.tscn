@@ -496,4 +496,3 @@ position = Vector2(-105, 153)
 [node name="Moving Platform" parent="." index="7" instance=ExtResource("7_srvaw")]
 position = Vector2(550.618, 25.0002)
 curve = SubResource("Curve2D_qvofr")
-requirement_to_move = 1

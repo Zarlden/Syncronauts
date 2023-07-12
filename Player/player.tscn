@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bivkuhpy2ko1t"]
+[gd_scene load_steps=34 format=3 uid="uid://bivkuhpy2ko1t"]
 
 [ext_resource type="Script" path="res://Player/PlayerAction.gd" id="1_gfmy5"]
 [ext_resource type="Texture2D" uid="uid://ba0gxox2wopob" path="res://Free/Main Characters/Virtual Guy/Idle (32x32).png" id="1_r5xou"]
@@ -205,6 +205,12 @@ properties/2/sync = true
 properties/3/path = NodePath(".:sync_direction")
 properties/3/spawn = true
 properties/3/sync = true
+properties/4/path = NodePath(".:player_animation")
+properties/4/spawn = true
+properties/4/sync = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlhce"]
+size = Vector2(20, 2)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gfmy5")
@@ -233,3 +239,13 @@ script = ExtResource("6_eu3jg")
 replication_config = SubResource("SceneReplicationConfig_dvjj0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerOnTopCheck" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerOnTopCheck"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_wlhce")
+debug_color = Color(0.92549, 0.156863, 0.54902, 0.419608)
+
+[connection signal="body_entered" from="PlayerOnTopCheck" to="." method="_on_player_on_top_check_body_entered"]
+[connection signal="body_exited" from="PlayerOnTopCheck" to="." method="_on_player_on_top_check_body_exited"]
