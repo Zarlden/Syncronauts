@@ -505,24 +505,24 @@ sources/0 = SubResource("TileSetAtlasSource_eq5rv")
 
 [sub_resource type="Curve2D" id="Curve2D_g0ntl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, -2, 0, 0, 0, 0, -155, -102)
+"points": PackedVector2Array(0, 0, 0, 0, -1, -2, 0, 0, 0, 0, -2, -128)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_0vp2t"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 4, -293)
+"points": PackedVector2Array(0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 5, -245, 0, 0, 0, 0, 4, -293)
 }
-point_count = 2
+point_count = 3
 
 [node name="Level_2" instance=ExtResource("1_daa3t")]
 position = Vector2(63, 81)
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
-offset_left = -514.0
-offset_top = -269.0
-offset_right = 518.0
-offset_bottom = 237.0
+offset_left = -580.0
+offset_top = -194.0
+offset_right = 452.0
+offset_bottom = 312.0
 texture = ExtResource("2_sd3mr")
 stretch_mode = 1
 
@@ -677,12 +677,21 @@ rotation = 4.71239
 scale = Vector2(3, 3)
 
 [node name="Moving Platform" parent="." index="36" instance=ExtResource("14_mgnkr")]
-position = Vector2(180, -13)
+position = Vector2(169, -13)
 curve = SubResource("Curve2D_g0ntl")
 
 [node name="Platform" parent="Moving Platform" index="0"]
 position = Vector2(-1, -2)
-scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="Moving Platform/Platform" index="1"]
+position = Vector2(0.500008, -1.5)
+scale = Vector2(1.9375, 1.1875)
+
+[node name="Label" parent="Moving Platform/Platform" index="2"]
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 17.0
+offset_bottom = 6.0
 
 [node name="PathFollow2D" parent="Moving Platform" index="2"]
 position = Vector2(-1, -2)
@@ -693,7 +702,14 @@ curve = SubResource("Curve2D_0vp2t")
 
 [node name="Platform" parent="Moving Platform2" index="0"]
 position = Vector2(2, 2)
-scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="Moving Platform2/Platform" index="1"]
+position = Vector2(0.500002, 0)
+scale = Vector2(1.85417, 1)
+
+[node name="Label" parent="Moving Platform2/Platform" index="2"]
+offset_top = -7.0
+offset_bottom = 9.0
 
 [node name="PathFollow2D" parent="Moving Platform2" index="2"]
 position = Vector2(2, 2)
