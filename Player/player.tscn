@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bivkuhpy2ko1t"]
+[gd_scene load_steps=35 format=3 uid="uid://bivkuhpy2ko1t"]
 
 [ext_resource type="Script" path="res://Player/PlayerAction.gd" id="1_gfmy5"]
 [ext_resource type="Texture2D" uid="uid://ba0gxox2wopob" path="res://Free/Main Characters/Virtual Guy/Idle (32x32).png" id="1_r5xou"]
@@ -196,20 +196,28 @@ size = Vector2(22, 24)
 properties/0/path = NodePath(".:sync_position")
 properties/0/spawn = true
 properties/0/sync = true
+properties/0/watch = false
 properties/1/path = NodePath(".:sync_velocity")
 properties/1/spawn = true
 properties/1/sync = true
+properties/1/watch = false
 properties/2/path = NodePath(".:is_processed")
 properties/2/spawn = true
 properties/2/sync = true
+properties/2/watch = false
 properties/3/path = NodePath(".:sync_direction")
 properties/3/spawn = true
 properties/3/sync = true
+properties/3/watch = false
 properties/4/path = NodePath(".:player_animation")
 properties/4/spawn = true
 properties/4/sync = true
+properties/4/watch = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlhce"]
+size = Vector2(20, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg8cv"]
 size = Vector2(20, 2)
 
 [node name="Player" type="CharacterBody2D"]
@@ -246,6 +254,10 @@ replication_config = SubResource("SceneReplicationConfig_dvjj0")
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_wlhce")
 debug_color = Color(0.92549, 0.156863, 0.54902, 0.419608)
+
+[node name="BottomSeperator" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_lg8cv")
 
 [connection signal="body_entered" from="PlayerOnTopCheck" to="." method="_on_player_on_top_check_body_entered"]
 [connection signal="body_exited" from="PlayerOnTopCheck" to="." method="_on_player_on_top_check_body_exited"]
