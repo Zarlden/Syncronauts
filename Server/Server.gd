@@ -1,8 +1,13 @@
 extends Node2D
 
-const playerObj = preload("res://Player/player.tscn")
+const playerObjs = [preload("res://Player/BluePlayer.tscn"), preload("res://Player/RedPlayer.tscn"), 
+preload("res://Player/GreenPlayer.tscn"), preload("res://Player/YellowPlayer.tscn")]
 const level1 = preload("res://Level/level_1.tscn")
-@onready var level = $"Level 2"
+@onready var level = $Level_2
+var players_connected = 0
+var next_character_spawn = 0
+var player_ids = {}
+
 
 func _enter_tree():
 	#Events.goal_reached.connect(level_transition)
@@ -14,6 +19,7 @@ func _enter_tree():
 		
 func start_network(isServer):
 	var peer = ENetMultiplayerPeer.new()
+	
 	if isServer:
 		multiplayer.peer_connected.connect(self.create_player)
 		multiplayer.peer_disconnected.connect(self.destroy_player)
@@ -23,6 +29,7 @@ func start_network(isServer):
 	else:
 		multiplayer.connected_to_server.connect(self.success)
 		multiplayer.connection_failed.connect(self.failed)
+		multiplayer.peer_disconnected.connect(self.destroy_player)
 		
 		peer.create_client("localhost", 4242)
 		print("Client Connected")
@@ -30,14 +37,23 @@ func start_network(isServer):
 	multiplayer.set_multiplayer_peer(peer)	
 	
 func create_player(id):	
-	var player = playerObj.instantiate()
-	player.name = str(id)
-	player.global_position = level.respawn_location
-	$Players.add_child(player)
-	
-	print("Player with id " + player.name)
+	if players_connected <= 4:
+		var player = playerObjs[next_character_spawn].instantiate()
+		player.name = str(id)
+		$Players.add_child(player)
+		
+		player_ids[id] = next_character_spawn
+		next_character_spawn += 1
+		players_connected += 1
+
+		print("Player with id " + player.name)
 	
 func destroy_player(id):
+	next_character_spawn = player_ids[id]
+	print("Player " + str(id) + " disconnected.")
+	player_ids.erase(id)
+	players_connected -= 1
+
 	$Players.get_node(str(id)).queue_free()
 
 func failed():

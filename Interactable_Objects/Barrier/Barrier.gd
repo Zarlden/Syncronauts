@@ -1,7 +1,6 @@
 extends Area2D
 
-const colourNode = preload("res://ColourNode.gd")
-var barrier_colour = colourNode.colourSet.BLUE
+var barrier_colour = null
 
 func _ready():
 	$BarrierShape/BarrierCollision.set_deferred("disabled", false)
@@ -14,4 +13,3 @@ func _on_body_entered(body):
 			$BarrierShape/BarrierCollision.set_deferred("disabled", true)
 			return
 	$BarrierShape/BarrierCollision.set_deferred("disabled", false)	
-	

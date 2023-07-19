@@ -14,5 +14,4 @@ script = ExtResource("1_2n5eh")
 position = Vector2(0, 1)
 shape = SubResource("SegmentShape2D_5eiwm")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -12,6 +12,3 @@ position = Vector2(-0.125, 1)
 [node name="Sprite2D" parent="BarrierShape" index="1"]
 position = Vector2(3, 4)
 texture = ExtResource("2_2mcat")
-
-[node name="AreaEnter" parent="." index="1"]
-position = Vector2(0.25, 1)

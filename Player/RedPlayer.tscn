@@ -188,7 +188,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 30.0
 }]
 
 [node name="RedPlayer" instance=ExtResource("1_6px7k")]
