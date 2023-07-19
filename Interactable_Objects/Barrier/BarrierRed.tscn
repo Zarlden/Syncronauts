@@ -13,8 +13,5 @@ position = Vector2(-1.25, -1)
 position = Vector2(2, 2)
 texture = ExtResource("2_g1a55")
 
-[node name="AreaEnter" parent="." index="1"]
-position = Vector2(-1, -1)
-
 [node name="ColourNode" parent="." index="2"]
-colour = 1
+colour = 2

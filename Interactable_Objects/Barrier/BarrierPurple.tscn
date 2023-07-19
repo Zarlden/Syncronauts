@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmk8wrhy4l1rd"]
+
+[ext_resource type="PackedScene" uid="uid://doha7wh6blv3e" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="1_5fwuw"]
+[ext_resource type="Texture2D" uid="uid://dm1rpmpgf0v34" path="res://Interactable_Objects/Barrier/PurpleBarrier.png" id="2_wx2vt"]
+
+[node name="Barrier" instance=ExtResource("1_5fwuw")]
+
+[node name="ColourNode" parent="." index="2"]
+colour = 1
+sec_colour = 2
+
+[node name="PurpleBarrier" type="Sprite2D" parent="." index="3"]
+position = Vector2(0, -0.250002)
+scale = Vector2(0.84375, 0.773437)
+texture = ExtResource("2_wx2vt")
