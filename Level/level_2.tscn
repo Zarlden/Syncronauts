@@ -519,10 +519,10 @@ point_count = 3
 position = Vector2(63, 81)
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
-offset_left = -580.0
-offset_top = -194.0
-offset_right = 452.0
-offset_bottom = 312.0
+offset_left = -447.0
+offset_top = -239.0
+offset_right = 585.0
+offset_bottom = 267.0
 texture = ExtResource("2_sd3mr")
 stretch_mode = 1
 
