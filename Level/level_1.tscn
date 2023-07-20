@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dixv3mg3pm52i"]
+[gd_scene load_steps=11 format=3 uid="uid://dixv3mg3pm52i"]
 
 [ext_resource type="Texture2D" uid="uid://ck3pw7mtlywca" path="res://Free/Background/Blue.png" id="1_4rjkc"]
 [ext_resource type="Texture2D" uid="uid://bj3tp8xabl3jr" path="res://Free/Terrain/Terrain (16x16).png" id="1_7l7et"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bqtpmqybxghfy" path="res://Interactable_Objects/checkpoint.tscn" id="7_o57h3"]
 [ext_resource type="PackedScene" uid="uid://bxlqdtfthhrtj" path="res://Interactable_Objects/Barrier/BarrierBlue.tscn" id="8_1fi8t"]
 [ext_resource type="PackedScene" uid="uid://pouw3u2i4c6d" path="res://Interactable_Objects/goal.tscn" id="8_4cfu4"]
-[ext_resource type="PackedScene" uid="uid://cmk8wrhy4l1rd" path="res://Interactable_Objects/Barrier/BarrierPurple.tscn" id="9_mckuv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vhq63"]
 texture = ExtResource("1_7l7et")
@@ -498,12 +497,11 @@ position = Vector2(609, 39)
 [node name="BarrierBlue2" parent="." index="11" instance=ExtResource("8_1fi8t")]
 position = Vector2(553, 37)
 
-[node name="Barrier" parent="." index="12" instance=ExtResource("9_mckuv")]
-position = Vector2(777, -1)
+[node name="BarrierRed" parent="." index="12" instance=ExtResource("7_4hb5c")]
+position = Vector2(725, 40)
 
 [node name="BarrierBlue3" parent="." index="13" instance=ExtResource("8_1fi8t")]
-position = Vector2(722, 38)
+position = Vector2(775, -6)
 
-[node name="BarrierBlue4" parent="." index="14" instance=ExtResource("8_1fi8t")]
-position = Vector2(1019, -7)
-scale = Vector2(1.21808, 1.13005)
+[node name="BarrierRed3" parent="." index="14" instance=ExtResource("7_4hb5c")]
+position = Vector2(1021, -4)
