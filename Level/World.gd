@@ -1,4 +1,5 @@
 extends Node2D
+class_name Barrier
 
 @onready var camera = $Camera2D
 @onready var spawn = $SpawnPosition
