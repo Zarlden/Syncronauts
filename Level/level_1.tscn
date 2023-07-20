@@ -503,3 +503,7 @@ position = Vector2(777, -1)
 
 [node name="BarrierBlue3" parent="." index="13" instance=ExtResource("8_1fi8t")]
 position = Vector2(722, 38)
+
+[node name="BarrierBlue4" parent="." index="14" instance=ExtResource("8_1fi8t")]
+position = Vector2(1019, -7)
+scale = Vector2(1.21808, 1.13005)
