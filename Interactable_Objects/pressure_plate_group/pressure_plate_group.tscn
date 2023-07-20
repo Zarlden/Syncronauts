@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ox3eayne6t81"]
+
+[ext_resource type="PackedScene" uid="uid://kg1u26jurwmi" path="res://Interactable_Objects/pressure_plate.tscn" id="1_o041s"]
+[ext_resource type="PackedScene" uid="uid://bxlqdtfthhrtj" path="res://Interactable_Objects/Barrier/BarrierBlue.tscn" id="2_eqv6o"]
+
+[node name="pressurePlateGroup" type="Node2D"]
+
+[node name="Pressure Plate" parent="." instance=ExtResource("1_o041s")]
+
+[node name="BarrierBlue" parent="." instance=ExtResource("2_eqv6o")]
