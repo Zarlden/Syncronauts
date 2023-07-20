@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ceq0145hdfnwg"]
+[gd_scene load_steps=21 format=3 uid="uid://ceq0145hdfnwg"]
 
 [ext_resource type="PackedScene" uid="uid://b4f3ftr2dct45" path="res://Level/level_template.tscn" id="1_daa3t"]
 [ext_resource type="Texture2D" uid="uid://dqtxev8xuimd4" path="res://Free/Background/Yellow.png" id="2_sd3mr"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ch6pmxvx21fnd" path="res://platform/movingPlatform.tscn" id="14_mgnkr"]
 [ext_resource type="PackedScene" uid="uid://bo5t0dlvj5uw6" path="res://Interactable_Objects/Barrier/BarrierWhite.tscn" id="15_ev78h"]
 [ext_resource type="PackedScene" uid="uid://bskakdp4cc25l" path="res://Interactable_Objects/Barrier/BarrierBlack.tscn" id="16_p1ix5"]
+[ext_resource type="PackedScene" uid="uid://bxlqdtfthhrtj" path="res://Interactable_Objects/Barrier/BarrierBlue.tscn" id="17_rrv5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq5rv"]
 texture = ExtResource("6_fpk1e")
@@ -697,6 +698,22 @@ scale = Vector2(0.76, 1)
 [node name="Barrier6" parent="." index="39" instance=ExtResource("16_p1ix5")]
 position = Vector2(50, 25)
 scale = Vector2(-1.6462, -0.332578)
+
+[node name="BarrierBlue" parent="." index="40" instance=ExtResource("17_rrv5k")]
+position = Vector2(133, -102)
+rotation = 1.5708
+
+[node name="Barrier7" parent="." index="41" instance=ExtResource("15_ev78h")]
+position = Vector2(131, -114)
+rotation = 1.5708
+
+[node name="Barrier8" parent="." index="42" instance=ExtResource("16_p1ix5")]
+position = Vector2(188, -17)
+rotation = 1.5708
+
+[node name="BarrierRed2" parent="." index="43" instance=ExtResource("5_yobpp")]
+position = Vector2(187, -31)
+rotation = 1.5708
 
 [editable path="PortalPair"]
 [editable path="PortalPair2"]
