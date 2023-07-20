@@ -1,18 +1,22 @@
 extends AnimatableBody2D
 
 signal pressure_plate_pressed
-signal pressure_plate_unpressed
+signal pressure_plate_released
 
-@onready var animation_player = $AnimationPlayer
 var hasTriggered = false
+var red_button = null
 
-
-func _ready():
-	$Area2D.body_entered.connect(pressed)
-
-func pressed(body):
+func _on_area_2d_body_entered(body):
 	if body is Player and not hasTriggered:
-		animation_player.play("pressed")
 		print("Entered")
+		red_button = $PressurePlateButton
+		remove_child($PressurePlateButton)
 		emit_signal("pressure_plate_pressed")
 		hasTriggered = true
+
+
+func _on_area_2d_body_exited(body):
+	if body is Player and hasTriggered:
+		add_child(red_button)
+		emit_signal("pressure_plate_released")
+		hasTriggered = false

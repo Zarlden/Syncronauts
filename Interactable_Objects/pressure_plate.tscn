@@ -72,3 +72,6 @@ texture = ExtResource("2_xcn4y")
 position = Vector2(7.12913, 48)
 scale = Vector2(7.59778, -5.87409)
 texture = ExtResource("3_djml6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
