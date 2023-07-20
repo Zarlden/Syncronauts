@@ -14,5 +14,4 @@ position = Vector2(3, 3)
 texture = ExtResource("2_u871f")
 
 [node name="ColourNode" parent="." index="2"]
-colour = 2
-sec_colour = null
+colour = 3

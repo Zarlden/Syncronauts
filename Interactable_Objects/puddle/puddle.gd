@@ -10,4 +10,4 @@ func _on_body_entered(body):
 			body.player_died()
 
 func _ready():
-	
+	pass

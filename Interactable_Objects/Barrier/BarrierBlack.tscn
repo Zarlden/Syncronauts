@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bskakdp4cc25l"]
+
+[ext_resource type="PackedScene" uid="uid://doha7wh6blv3e" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="1_qvplx"]
+[ext_resource type="Texture2D" uid="uid://d0thmn2bbghdx" path="res://Interactable_Objects/Barrier/BlackBarrier.png" id="2_v7inu"]
+
+[node name="Barrier" instance=ExtResource("1_qvplx")]
+
+[node name="BlackBarrier" type="Sprite2D" parent="." index="3"]
+position = Vector2(0.500001, -8.34465e-07)
+scale = Vector2(0.921875, 0.78125)
+texture = ExtResource("2_v7inu")

@@ -5,7 +5,9 @@ enum colourSet {
 	BLUE,
 	RED,
 	GREEN,
-	YELLOW
+	YELLOW,
+	WHITE,
+	BLACK,
 }
 @export var colour = colourSet.NONE
 @export var sec_colour = colourSet.NONE

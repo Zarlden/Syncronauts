@@ -489,17 +489,17 @@ next_level = "res://Level/level_1.tscn"
 [node name="Level_Boundary" parent="." index="6" instance=ExtResource("7_frwn5")]
 position = Vector2(-105, 153)
 
-[node name="BarrierRed" parent="." index="9" instance=ExtResource("7_4hb5c")]
-position = Vector2(726, 39)
-
-[node name="BarrierBlue" parent="." index="10" instance=ExtResource("8_1fi8t")]
+[node name="BarrierBlue" parent="." index="9" instance=ExtResource("8_1fi8t")]
 position = Vector2(664, 38)
 
-[node name="BarrierRed2" parent="." index="11" instance=ExtResource("7_4hb5c")]
+[node name="BarrierRed2" parent="." index="10" instance=ExtResource("7_4hb5c")]
 position = Vector2(609, 39)
 
-[node name="BarrierBlue2" parent="." index="12" instance=ExtResource("8_1fi8t")]
+[node name="BarrierBlue2" parent="." index="11" instance=ExtResource("8_1fi8t")]
 position = Vector2(553, 37)
 
-[node name="Barrier" parent="." index="13" instance=ExtResource("9_mckuv")]
+[node name="Barrier" parent="." index="12" instance=ExtResource("9_mckuv")]
 position = Vector2(777, -1)
+
+[node name="BarrierBlue3" parent="." index="13" instance=ExtResource("8_1fi8t")]
+position = Vector2(722, 38)

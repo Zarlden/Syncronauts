@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo5t0dlvj5uw6"]
+
+[ext_resource type="PackedScene" uid="uid://doha7wh6blv3e" path="res://Interactable_Objects/Barrier/Barrier.tscn" id="1_iapat"]
+[ext_resource type="Texture2D" uid="uid://dxbk78lataxka" path="res://Interactable_Objects/Barrier/WhiteBarrier.png" id="2_kg62j"]
+
+[node name="Barrier" instance=ExtResource("1_iapat")]
+
+[node name="WhiteBarrier" type="Sprite2D" parent="." index="3"]
+position = Vector2(0, 1.13687e-13)
+scale = Vector2(0.90625, 0.78125)
+texture = ExtResource("2_kg62j")

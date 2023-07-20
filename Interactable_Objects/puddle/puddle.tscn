@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="2_2ebt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h2jp"]
+size = Vector2(20, 10)
 
 [sub_resource type="Gradient" id="Gradient_al5pl"]
 offsets = PackedFloat32Array(0.0193548, 0.716129, 0.983871)
@@ -11,6 +12,7 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0.565789, 0.565789, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tka27"]
 gradient = SubResource("Gradient_al5pl")
+fill_to = Vector2(0.449541, 0.738532)
 
 [node name="Puddle" type="Area2D"]
 script = ExtResource("1_nibik")

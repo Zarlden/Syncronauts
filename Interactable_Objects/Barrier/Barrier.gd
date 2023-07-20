@@ -9,7 +9,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is Player:	
-		if body.colour == barrier_colour or body.colour == $ColourNode.sec_colour:
+		if body.colour == barrier_colour or body.colour == $ColourNode.sec_colour or body.colour == $ColourNode.colourSet.WHITE:
 			$BarrierShape/BarrierCollision.set_deferred("disabled", true)
 			return
 	$BarrierShape/BarrierCollision.set_deferred("disabled", false)	
