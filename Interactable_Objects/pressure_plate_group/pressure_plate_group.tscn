@@ -1,21 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://ox3eayne6t81"]
+[gd_scene load_steps=7 format=3 uid="uid://ox3eayne6t81"]
 
 [ext_resource type="Script" path="res://Interactable_Objects/pressure_plate_group/pressure_plate_group.gd" id="1_ahvnh"]
 [ext_resource type="PackedScene" uid="uid://kg1u26jurwmi" path="res://Interactable_Objects/pressure_plate.tscn" id="1_o041s"]
 [ext_resource type="PackedScene" uid="uid://bxlqdtfthhrtj" path="res://Interactable_Objects/Barrier/BarrierBlue.tscn" id="2_eqv6o"]
 [ext_resource type="PackedScene" uid="uid://2tkt6w7i8l32" path="res://Interactable_Objects/Barrier/BarrierRed.tscn" id="2_oho7b"]
 [ext_resource type="PackedScene" uid="uid://wmehyh7qo3ay" path="res://colour_node.tscn" id="5_npagc"]
+[ext_resource type="PackedScene" uid="uid://bskakdp4cc25l" path="res://Interactable_Objects/Barrier/BarrierBlack.tscn" id="6_w5wgb"]
 
 [node name="pressurePlateGroup" type="Node2D"]
 script = ExtResource("1_ahvnh")
 
 [node name="BarrierRed" parent="." instance=ExtResource("2_oho7b")]
+visible = false
 
 [node name="Pressure Plate" parent="." instance=ExtResource("1_o041s")]
 
 [node name="BarrierBlue" parent="." instance=ExtResource("2_eqv6o")]
 
 [node name="ColourNode" parent="." instance=ExtResource("5_npagc")]
+
+[node name="BarrierBlack" parent="." instance=ExtResource("6_w5wgb")]
+visible = false
 
 [connection signal="pressure_plate_pressed" from="Pressure Plate" to="." method="_on_pressure_plate_pressure_plate_pressed"]
 [connection signal="pressure_plate_released" from="Pressure Plate" to="." method="_on_pressure_plate_pressure_plate_released"]

@@ -13,3 +13,7 @@ func _on_body_entered(body):
 			$BarrierShape/BarrierCollision.set_deferred("disabled", true)
 			return
 	$BarrierShape/BarrierCollision.set_deferred("disabled", false)	
+
+func change_texture(path):
+	var texture = load(path)
+	$BarrierShape/Sprite2D.texture = texture
