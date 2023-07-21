@@ -80,7 +80,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ivsl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpcoq"]
 size = Vector2(44, 45)
 
 [node name="Goal" type="Area2D"]
@@ -94,6 +94,6 @@ frame_progress = 0.76632
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10.5)
-shape = SubResource("RectangleShape2D_3ivsl")
+shape = SubResource("RectangleShape2D_xpcoq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

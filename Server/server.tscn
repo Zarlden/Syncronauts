@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6e527g3vum1i"]
 
 [ext_resource type="Script" path="res://Server/Server.gd" id="1_khtav"]
-[ext_resource type="PackedScene" uid="uid://ceq0145hdfnwg" path="res://Level/level_2.tscn" id="2_vsxup"]
+[ext_resource type="PackedScene" uid="uid://dixv3mg3pm52i" path="res://Level/level_1.tscn" id="2_frir0"]
 
 [node name="Server" type="Node2D"]
 script = ExtResource("1_khtav")
 
-[node name="Level_2" parent="." instance=ExtResource("2_vsxup")]
-position = Vector2(-34, -15)
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Level_1" parent="Level" instance=ExtResource("2_frir0")]
 
 [node name="Players" type="Node2D" parent="."]
 

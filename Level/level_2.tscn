@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ceq0145hdfnwg"]
+[gd_scene load_steps=21 format=3 uid="uid://ceq0145hdfnwg"]
 
 [ext_resource type="PackedScene" uid="uid://b4f3ftr2dct45" path="res://Level/level_template.tscn" id="1_daa3t"]
 [ext_resource type="Texture2D" uid="uid://dqtxev8xuimd4" path="res://Free/Background/Yellow.png" id="2_sd3mr"]
@@ -503,11 +503,17 @@ texture = ExtResource("6_fpk1e")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eq5rv")
 
-[sub_resource type="Curve2D" id="Curve2D_g0ntl"]
+[sub_resource type="Curve2D" id="Curve2D_vv3i5"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -1, -2, 0, 0, 0, 0, -2, -128)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85f1p"]
+size = Vector2(91, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colws"]
+size = Vector2(93, 19)
 
 [sub_resource type="Curve2D" id="Curve2D_0vp2t"]
 _data = {
@@ -678,10 +684,14 @@ scale = Vector2(3, 3)
 
 [node name="Moving Platform" parent="." index="36" instance=ExtResource("14_mgnkr")]
 position = Vector2(169, -13)
-curve = SubResource("Curve2D_g0ntl")
+curve = SubResource("Curve2D_vv3i5")
 
 [node name="Platform" parent="Moving Platform" index="0"]
 position = Vector2(-1, -2)
+
+[node name="CollisionShape2D" parent="Moving Platform/Platform/PlayerDetectArea" index="0"]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_85f1p")
 
 [node name="Sprite2D" parent="Moving Platform/Platform" index="1"]
 position = Vector2(0.500008, -1.5)
@@ -692,6 +702,10 @@ offset_left = -15.0
 offset_top = -10.0
 offset_right = 17.0
 offset_bottom = 6.0
+
+[node name="CollisionShape2D" parent="Moving Platform/Platform" index="3"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_colws")
 
 [node name="PathFollow2D" parent="Moving Platform" index="2"]
 position = Vector2(-1, -2)

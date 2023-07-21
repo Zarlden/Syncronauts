@@ -85,7 +85,8 @@ func _physics_process(delta):
 	$Networking.player_animation = animate_sprite.get_animation()
 	
 func player_died():
-	Events.emit_signal("player_dead", name)
+	if is_local_authority():
+		Events.emit_signal("player_dead", name)
 
 func connect_camera(camera):
 	var camera_path = camera.get_path()

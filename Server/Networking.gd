@@ -15,3 +15,11 @@ var checkpoint_animation_state: String
 
 # World Sync
 var respawn_location: Vector2
+
+# Platform Sync
+var platform_position: Vector2:
+	set(value):
+		platform_position = value
+		platform_is_processed = false
+var platform_number: int
+var platform_is_processed = false
