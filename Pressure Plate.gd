@@ -17,3 +17,6 @@ func pressed(body):
 		print("Entered")
 		emit_signal("pressure_plate_pressed")
 		hasTriggered = true
+		
+		var puddle = get_node("../Puddle")
+		puddle.queue_free()

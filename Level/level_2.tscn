@@ -522,7 +522,6 @@ _data = {
 point_count = 3
 
 [node name="Level_2" instance=ExtResource("1_daa3t")]
-position = Vector2(63, 81)
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 offset_left = -447.0
@@ -592,18 +591,10 @@ position = Vector2(392, 362)
 position = Vector2(-25, 334)
 
 [node name="Pressure Plate" parent="." index="12" instance=ExtResource("9_pidhu")]
-
-[node name="Sprite2D" parent="Pressure Plate" index="0"]
-region_rect = Rect2(0, 256, 256, 256)
-
-[node name="CollisionPolygon2D" parent="Pressure Plate" index="1"]
-polygon = PackedVector2Array(84, 48, 84, 52, 92, 52, 96, 56, 100, 60, 104, 64, 104, 72, -92, 72, -92, 64, -88, 60, -84, 56, -80, 52, -72, 52, -72, 48)
-
-[node name="CollisionShape2D" parent="Pressure Plate/Area2D" index="0"]
-position = Vector2(6, 51)
+position = Vector2(423, 472)
 
 [node name="Level_Boundary" parent="." index="13" instance=ExtResource("10_axys8")]
-position = Vector2(-544, 706)
+position = Vector2(-544, 742)
 
 [node name="Goal" parent="." index="14" instance=ExtResource("11_7kdxj")]
 position = Vector2(-214, -179)
@@ -663,7 +654,6 @@ position = Vector2(-125, 191)
 position = Vector2(253, 192)
 
 [node name="Spikes11" parent="." index="30" instance=ExtResource("12_soe75")]
-visible = false
 position = Vector2(117, 192)
 
 [node name="Spikes12" parent="." index="31" instance=ExtResource("12_soe75")]
@@ -724,6 +714,9 @@ curve = SubResource("Curve2D_0vp2t")
 [node name="Platform" parent="Moving Platform2" index="0"]
 position = Vector2(2, 2)
 
+[node name="CollisionShape2D" parent="Moving Platform2/Platform/PlayerDetectArea" index="0"]
+position = Vector2(-2, 1)
+
 [node name="Sprite2D" parent="Moving Platform2/Platform" index="1"]
 position = Vector2(0.500002, 0)
 scale = Vector2(1.85417, 1)
@@ -732,13 +725,15 @@ scale = Vector2(1.85417, 1)
 offset_top = -7.0
 offset_bottom = 9.0
 
+[node name="CollisionShape2D" parent="Moving Platform2/Platform" index="3"]
+position = Vector2(0.75, 0)
+
 [node name="PathFollow2D" parent="Moving Platform2" index="2"]
 position = Vector2(2, 2)
 
 [editable path="PortalPair"]
 [editable path="PortalPair2"]
 [editable path="PortalPair3"]
-[editable path="Pressure Plate"]
 [editable path="Moving Platform"]
 [editable path="Moving Platform/Platform"]
 [editable path="Moving Platform2"]

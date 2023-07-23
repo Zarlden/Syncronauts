@@ -6,7 +6,7 @@ const levels = [preload("res://Level/level_1.tscn"), preload("res://Level/level_
 var players_connected = 0
 var next_character_spawn = 0
 var player_ids = {}
-var level_index = 0
+var level_index = 1
 
 @onready var players = $Players
 
