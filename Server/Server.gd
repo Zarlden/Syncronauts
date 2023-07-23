@@ -3,7 +3,7 @@ extends Node2D
 const playerObjs = [preload("res://Player/BluePlayer.tscn"), preload("res://Player/RedPlayer.tscn"), 
 preload("res://Player/GreenPlayer.tscn"), preload("res://Player/YellowPlayer.tscn")]
 const level1 = preload("res://Level/level_1.tscn")
-@onready var level = $Level_1
+@onready var level = $Level.get_child(0)
 var players_connected = 0
 var next_character_spawn = 0
 var player_ids = {}

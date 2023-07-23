@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch6pmxvx21fnd"]
+[gd_scene load_steps=10 format=3 uid="uid://ch6pmxvx21fnd"]
 
 [ext_resource type="Script" path="res://platform/movingPlatform.gd" id="1_uj803"]
 [ext_resource type="PackedScene" uid="uid://bkikn3flelvmw" path="res://platform/platform.tscn" id="2_goems"]
+[ext_resource type="Script" path="res://Server/Networking.gd" id="3_kyb8h"]
 
-[sub_resource type="Curve2D" id="Curve2D_6ey4e"]
+[sub_resource type="Curve2D" id="Curve2D_rh4ke"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 158, 0, 2.08165e-12, 2.08165e-12, 16.5642, -1.61277, 171.453, 0)
 }
@@ -51,8 +52,22 @@ _data = {
 "slideToSlide": SubResource("Animation_wq5dr")
 }
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dem1y"]
+properties/0/path = NodePath(".:platform_number")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+properties/1/path = NodePath(".:platform_is_processed")
+properties/1/spawn = true
+properties/1/sync = true
+properties/1/watch = false
+properties/2/path = NodePath(".:platform_position")
+properties/2/spawn = true
+properties/2/sync = true
+properties/2/watch = false
+
 [node name="Moving Platform" type="Path2D"]
-curve = SubResource("Curve2D_6ey4e")
+curve = SubResource("Curve2D_rh4ke")
 script = ExtResource("1_uj803")
 
 [node name="Platform" parent="." instance=ExtResource("2_goems")]
@@ -70,3 +85,9 @@ rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../Platform")
+
+[node name="Network" type="Node2D" parent="."]
+script = ExtResource("3_kyb8h")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Network"]
+replication_config = SubResource("SceneReplicationConfig_dem1y")

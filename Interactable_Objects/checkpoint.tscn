@@ -283,13 +283,14 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4eru"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6e2y"]
 size = Vector2(34, 46)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ynp7w"]
 properties/0/path = NodePath(".:checkpoint_animation_state")
 properties/0/spawn = true
 properties/0/sync = true
+properties/0/watch = false
 
 [node name="Checkpoint" type="Area2D"]
 script = ExtResource("1_0ti3r")
@@ -302,7 +303,7 @@ autoplay = "Unreached"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
-shape = SubResource("RectangleShape2D_q4eru")
+shape = SubResource("RectangleShape2D_y6e2y")
 
 [node name="Network" type="Node2D" parent="."]
 script = ExtResource("5_1ia43")
