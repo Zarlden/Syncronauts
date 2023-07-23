@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://pouw3u2i4c6d"]
+[gd_scene load_steps=18 format=3 uid="uid://pouw3u2i4c6d"]
 
 [ext_resource type="Script" path="res://Interactable_Objects/Goal.gd" id="1_xrv4g"]
 [ext_resource type="Texture2D" uid="uid://88klbx48hlyg" path="res://Free/Items/Checkpoints/End/End (Idle).png" id="2_wpp75"]
 [ext_resource type="Texture2D" uid="uid://bqsrw8ppo210d" path="res://Free/Items/Checkpoints/End/End (Pressed) (64x64).png" id="3_xb2tc"]
+[ext_resource type="Script" path="res://Server/Networking.gd" id="4_e8bni"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fpia"]
 atlas = ExtResource("2_wpp75")
@@ -80,20 +81,50 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_mjctt"]
+font_size = 15
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpcoq"]
 size = Vector2(44, 45)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_03htd"]
+properties/0/path = NodePath(".:goal_number")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+properties/1/path = NodePath(".:goal_animation")
+properties/1/spawn = true
+properties/1/sync = true
+properties/1/watch = false
 
 [node name="Goal" type="Area2D"]
 script = ExtResource("1_xrv4g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jqv6r")
-animation = &"Reached"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.76632
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -42.0
+offset_right = 19.0
+offset_bottom = -9.0
+text = "2"
+label_settings = SubResource("LabelSettings_mjctt")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_xpcoq")
 
+[node name="Network" type="Node2D" parent="."]
+script = ExtResource("4_e8bni")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Network"]
+replication_config = SubResource("SceneReplicationConfig_03htd")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

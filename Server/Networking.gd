@@ -10,7 +10,7 @@ var sync_direction: float
 var is_processed = false
 var player_animation: String
 
-# Goal Sync
+# Checkpoint Sync
 var checkpoint_animation_state: String
 
 # World Sync
@@ -23,3 +23,7 @@ var platform_position: Vector2:
 		platform_is_processed = false
 var platform_number: int
 var platform_is_processed = false
+
+# Goal Sync
+var goal_number: int
+var goal_animation: String

@@ -558,8 +558,7 @@ layer_0/tile_data = PackedInt32Array(196604, 196608, 9, 131068, 131072, 9, 65532
 position = Vector2(-1, -18)
 
 [node name="Camera2D" parent="." index="6"]
-visible = false
-position = Vector2(54, -5)
+position = Vector2(54, 230)
 zoom = Vector2(1, 1)
 
 [node name="PortalPair" parent="." index="7" instance=ExtResource("7_834qe")]
@@ -593,7 +592,15 @@ position = Vector2(392, 362)
 position = Vector2(-25, 334)
 
 [node name="Pressure Plate" parent="." index="12" instance=ExtResource("9_pidhu")]
-position = Vector2(423, 478)
+
+[node name="Sprite2D" parent="Pressure Plate" index="0"]
+region_rect = Rect2(0, 256, 256, 256)
+
+[node name="CollisionPolygon2D" parent="Pressure Plate" index="1"]
+polygon = PackedVector2Array(84, 48, 84, 52, 92, 52, 96, 56, 100, 60, 104, 64, 104, 72, -92, 72, -92, 64, -88, 60, -84, 56, -80, 52, -72, 52, -72, 48)
+
+[node name="CollisionShape2D" parent="Pressure Plate/Area2D" index="0"]
+position = Vector2(6, 51)
 
 [node name="Level_Boundary" parent="." index="13" instance=ExtResource("10_axys8")]
 position = Vector2(-544, 706)
@@ -731,6 +738,7 @@ position = Vector2(2, 2)
 [editable path="PortalPair"]
 [editable path="PortalPair2"]
 [editable path="PortalPair3"]
+[editable path="Pressure Plate"]
 [editable path="Moving Platform"]
 [editable path="Moving Platform/Platform"]
 [editable path="Moving Platform2"]

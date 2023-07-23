@@ -12,6 +12,7 @@ func _ready():
 
 func pressed(body):
 	if body is Player and not hasTriggered:
+		
 		animation_player.play("pressed")
 		print("Entered")
 		emit_signal("pressure_plate_pressed")
