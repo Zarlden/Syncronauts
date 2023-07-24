@@ -7,13 +7,13 @@
 collision_layer = 4
 
 [node name="BarrierCollision" parent="BarrierShape" index="0"]
-position = Vector2(-1.25, -1)
+position = Vector2(-1.25, 0.25)
 
 [node name="Sprite2D" parent="BarrierShape" index="1"]
 position = Vector2(2, 2)
 texture = ExtResource("2_g1a55")
 
-[node name="AreaEnter" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-1, -1)
 
 [node name="ColourNode" parent="." index="2"]

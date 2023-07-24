@@ -2,11 +2,11 @@ extends Node2D
 
 const playerObjs = [preload("res://Player/BluePlayer.tscn"), preload("res://Player/RedPlayer.tscn"), 
 preload("res://Player/GreenPlayer.tscn"), preload("res://Player/YellowPlayer.tscn")]
-const levels = [preload("res://Level/level_1.tscn"), preload("res://Level/level_2.tscn")]
+var levels = ["res://Level/level_0.tscn", "res://Level/level_1.tscn", "res://Level/level_2.tscn", "res://Level/level_3.tscn", "res://Level/level_0.tscn"]
 var players_connected = 0
 var next_character_spawn = 0
 var player_ids = {}
-var level_index = 1
+var level_index = 0
 
 @onready var players = $Players
 
@@ -73,18 +73,27 @@ func success():
 func level_transition():
 	
 	print(multiplayer.is_server())
+
 	
 	if multiplayer.is_server() and level_index < levels.size(): #messy, its too late at night
-		change_scene(levels[level_index])
+		
+		change_scene(load(levels[level_index]))
 		level_index += 1
 		
+		
 	elif not multiplayer.is_server():
+
 		await get_tree().create_timer(0.2).timeout
+
+			
+		players = $Players
 		
 		for player in players.get_children():
 			player.player_died()
 		
-		change_scene(levels[level_index])
+		change_scene(load(levels[level_index]))
+		
+		
 	
 func change_scene(scene: PackedScene):
 	
@@ -92,13 +101,14 @@ func change_scene(scene: PackedScene):
 	
 	if multiplayer.is_server():
 		for level in level_manager.get_children():
-			level_manager.call_deferred("remove_child", level)
-			level.call_deferred("queue_free")
+			level_manager.remove_child(level)
+			level.queue_free()
 		
 		level_manager.add_child(scene.instantiate(), true)
+
 		return
 		
-	if level_manager.get_children().size() > 0:
+	elif level_manager.get_children().size() > 1:
 		var removed_level = level_manager.get_children()[0]
 		print(removed_level.name)
 		level_manager.call_deferred("remove_child", removed_level)

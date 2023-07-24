@@ -3,17 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://bj3tp8xabl3jr" path="res://Free/Terrain/Terrain (16x16).png" id="1_ufx11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxygl"]
-size = Vector2(88, 4.5)
+size = Vector2(47, 4.875)
 
 [sub_resource type="LabelSettings" id="LabelSettings_y01ie"]
 line_spacing = 0.0
 font_size = 11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdp26"]
-size = Vector2(87, 16)
+size = Vector2(47.8333, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bisk0"]
-size = Vector2(92, 8.75)
+size = Vector2(47.5, 8.75)
 
 [node name="Platform" type="AnimatableBody2D"]
 
@@ -21,7 +21,7 @@ size = Vector2(92, 8.75)
 position = Vector2(3, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea"]
-position = Vector2(-3.5, 1)
+position = Vector2(-2.5, 1.125)
 shape = SubResource("RectangleShape2D_hxygl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -45,5 +45,5 @@ shape = SubResource("RectangleShape2D_sdp26")
 [node name="BottomDetectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDetectArea"]
-position = Vector2(-0.5, 7.75)
+position = Vector2(0.500001, 7.75)
 shape = SubResource("RectangleShape2D_bisk0")
