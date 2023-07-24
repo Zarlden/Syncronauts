@@ -15,6 +15,6 @@ _spawnable_scenes = PackedStringArray("res://Player/BluePlayer.tscn", "res://Pla
 spawn_path = NodePath("../Players")
 
 [node name="LevelSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Level/level_2.tscn", "res://Level/level_1.tscn")
+_spawnable_scenes = PackedStringArray("res://Level/level_2.tscn", "res://Level/level_1.tscn", "res://Level/level_3.tscn", "res://Level/level_0.tscn")
 spawn_path = NodePath("../Level_Manager")
 spawn_limit = 1

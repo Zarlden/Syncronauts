@@ -29,7 +29,7 @@ func _ready():
 		
 	
 func _physics_process(delta):
-	if not is_local_authority():
+	if not is_local_authority() or multiplayer.is_server():
 		if not $Networking.is_processed:
 			position = lerp(position, $Networking.sync_position, interpol_speed * delta)
 			$Networking.is_processed = true
