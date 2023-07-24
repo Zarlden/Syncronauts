@@ -21,6 +21,8 @@ func _ready():
 	if multiplayer.is_server():
 		platform.get_node("PlayerDetectArea").body_entered.connect(enter_platform)
 		platform.get_node("PlayerDetectArea").body_exited.connect(exit_platform)
+		platform.get_node("BottomDetectArea").body_entered.connect(onLowerEntered)
+		platform.get_node("BottomDetectArea").body_exited.connect(onLowerExited)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,11 +31,21 @@ func _process(delta):
 		
 		requirement_to_move = max(requirement_to_move - total_weights, 0)
 		label.text = str(requirement_to_move)
-		if requirement_to_move <= 0 and not moving:
+		
+		if bumped_players != 0 :
+			animation_player.pause()
+			paused = true
+			moving = false
+
+		if paused and bumped_players ==0:
+			paused = false
+			moving = true
+			
+		if requirement_to_move <= 0 and not moving and not paused:
 			animation_player.play("leftToRight")
 			moving = true
 
-		elif requirement_to_move > 0 and moving:
+		if requirement_to_move > 0 and moving and not paused:
 			animation_player.play_backwards("leftToRight")
 			moving = false
 			
@@ -66,3 +78,10 @@ func exit_platform(body):
 		platformCounter = min(platformCounter + 1, -1)
 		print("PF Counter Exit: " + str(platformCounter))
 		
+func onLowerEntered(body):
+	if body is Player:
+		bumped_players += 1
+
+func onLowerExited(body):
+	if body is Player:
+		bumped_players -= 1
